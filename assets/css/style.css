@@ -4,9 +4,27 @@ body{
     text-transform: capitalize;
 }
 
+
+.logo-container{
+    position: relative;
+}
+.logo{
+    position: absolute;
+    top: 25px;
+    left: 40px;
+}
+
+.logo img{
+    width: 200px;
+}
+
 .form-holder{
     box-shadow: 3px 5px 10px 1px #bebebe;
     width: 350px;
+}
+
+.signup .form-holder{
+    width: 35%;
 }
 
 .form-holder input{
@@ -21,7 +39,26 @@ body{
     border-radius: 30px;
 }
 
+.password-container{
+    position: relative;
+}
+
+.show-password{
+    position: absolute;
+    top: 2px;
+    left: 244px;
+}
+
 .links:hover{
     text-decoration: underline;
     background-color: #d0e8ff;
+}
+
+.show-password:hover{
+    text-decoration: none;
+}
+
+
+.hidden{
+    display: none;
 }
