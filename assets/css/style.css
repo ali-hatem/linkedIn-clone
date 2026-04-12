@@ -168,20 +168,10 @@ body {
 .show-pw {
   position: absolute;
   cursor: pointer;
-  right: 13px;
-  top: 15px;
+  right: 27px;
+  top: 19px;
   padding: 2px;
   line-height: 1;
-}
-
-.field-error {
-  font-size: 12px;
-  color: var(--li-error);
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 18px;
 }
 
 .forgetpassword{
@@ -214,4 +204,13 @@ body {
 
 .login-link{
     text-align: center;
+}
+
+.maintext{
+  font-size: 16px;
+}
+
+.subtext{
+  font-size: 14px;
+  color: var(--li-muted);
 }

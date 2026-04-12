@@ -9,106 +9,203 @@
   </head>
   <body>
     <div class="logo">
-      <img src="assets/images/logowithword.png" alt="">
+      <img src="assets/images/logowithword.png" alt="" />
     </div>
     <div class="main">
+      <!-- start the login card -->
       <div class="login-card hidden">
-        
         <div class="card active">
           <h1 class="title mb-4">Sign in</h1>
-          
-        <button class="btn-google mb-2">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"/>
-          Continue with Google
-        </button>
-        <p>
-          By clicking  Continue, you agree to the LinkedIn
-          <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>,
-          and <a href="#">Cookie Policy</a>.
-        </p>
 
-        <div class="or-divider">or</div>
-
-        <div class="form-item">
-          <label class="form-label" for="emailInput">Email address</label>
-          <input
-            type="email"
-            id="emailInput"
-            placeholder="e.g. john@example.com"
-            autocomplete="email"
-          />
-        </div>
-        <div class="form-item">
-          <label class="form-label" for="passwordInput">Password</label>
-          <div class="pw-container">
-            <input
-              type="password"
-              id="passwordInput"
-              placeholder="Password"
+          <button class="btn-google mb-2">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
             />
-            <span class="links show-pw">show</span>
+            Continue with Google
+          </button>
+          <p>
+            By clicking Continue, you agree to the LinkedIn
+            <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and
+            <a href="#">Cookie Policy</a>.
+          </p>
+
+          <div class="or-divider">or</div>
+
+          <div class="form-item">
+            <label class="form-label" for="emailInput">Email address</label>
+            <input
+              type="email"
+              placeholder="e.g. john@example.com"
+              autocomplete="email"
+            />
+          </div>
+          <div class="form-item">
+            <label class="form-label" for="passwordInput">Password</label>
+            <div class="pw-container">
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Password"
+              />
+              <span class="links show-pw">show</span>
+            </div>
+          </div>
+          <a href="#" class="links forgetpassword">forget password?</a>
+
+          <button class="submit-btn mb-4">Sign in</button>
+
+          <div class="login-link">
+            Already on Let's link? <a href="#" class="links">Sign in</a>
           </div>
         </div>
-        <a href="#" class="links forgetpassword">forget password?</a>
-        
-
-        
-        <button class="submit-btn mb-4">Sign in</button>
-
-
-        <div class="login-link">
-          Already on Let's link? <a href="#" class="links">Sign in</a>
-        </div>
       </div>
-    </div>
-    <div class="signup-card">
+      <!-- end the login card -->
 
-      <div class="card active">
-        <h1 class="title mb-4">join let's link now — it's free!</h1>
-        
-        <div class="form-item">
-          <label class="form-label" for="emailInput">Email address</label>
-          <input
-            type="email"
-            id="emailInput"
-            placeholder="e.g. john@example.com"
-            autocomplete="email"
-          />
-          <div class="field-error" id="emailError"></div>
-        </div>
-        <div class="form-item">
-          <label class="form-label" for="passwordInput">Password</label>
-          <div class="pw-container">
+      <!-- start the signup cards -->
+      <div class="signup-card">
+        <!-- start card one -->
+        <div class="card">
+          <h1 class="title mb-4">join let's link now — it's free!</h1>
+
+          <div class="form-floating mb-3 is-invalid">
+            <input
+              type="email"
+              class="form-control is-invalid"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Email address</label>
+            <div class="invalid-feedback">Please enter an Email address</div>
+          </div>
+          <div class="form-floating is-invalid">
             <input
               type="password"
-              id="passwordInput"
+              class="form-control is-invalid"
+              id="floatingPassword"
               placeholder="Password"
             />
+            <label for="floatingPassword">Password</label>
             <span class="links show-pw">show</span>
+            <div class="invalid-feedback">Please enter your password</div>
           </div>
-          <div class="field-error" id="passwordError"></div>
-        </div>
 
-        <p>
-          By clicking Agree &amp; Join, you agree to the LinkedIn
-          <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>,
-          and <a href="#">Cookie Policy</a>.
-        </p>
-        <button class="submit-btn mb-4">Agree &amp; Join</button>
-        <div class="or-divider">or</div>
-        <button class="btn-google mb-4">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"/>
-          Continue with Google
-        </button>
+          <p>
+            By clicking Agree &amp; Join, you agree to the LinkedIn
+            <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and
+            <a href="#">Cookie Policy</a>.
+          </p>
+          <button class="submit-btn mb-4">Agree &amp; Join</button>
+          <div class="or-divider">or</div>
+          <button class="btn-google mb-4">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
+            />
+            Continue with Google
+          </button>
 
-        <div class="login-link">
-          Already on Let's link? <a href="#" class="links">Sign in</a>
+          <div class="login-link">
+            Already on Let's link? <a href="#" class="links">Sign in</a>
+          </div>
         </div>
+        <!-- end card one  -->
+
+        <!-- start card two  -->
+        <div class="card">
+          <h1 class="title mb-4">join let's link now — it's free!</h1>
+          <div class="form-floating mb-3 is-invalid">
+            <input
+              type="text"
+              class="form-control is-invalid"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">First Name</label>
+            <div class="invalid-feedback">Please enter your first name.</div>
+          </div>
+          <div class="form-floating is-invalid">
+            <input
+              type="password"
+              class="form-control is-invalid"
+              placeholder="text"
+            />
+            <label for="floatingPassword">Last Name</label>
+          </div>
+          <div class="invalid-feedback">Please enter your last name.</div>
+          <button class="submit-btn mt-4">Continue</button>
+        </div>
+        <!-- end card two -->
+
+        <!-- start card three -->
+        <div class="card active">
+          <h1 class="title mb-4">join let's link now — it's free!</h1>
+          <label for="country-select" class="form-label maintext"
+            >Choose your country</label
+          >
+          <select
+            class="form-select mb-3"
+            aria-label="Default select example"
+            id="country-select"
+          >
+            <option selected>Choose a country</option>
+            <option value="US">United States</option>
+            <option value="GB">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+            <option value="DE">Germany</option>
+            <option value="FR">France</option>
+            <option value="IN">India</option>
+            <option value="BR">Brazil</option>
+            <option value="JP">Japan</option>
+            <option value="CN">China</option>
+            <option value="KR">South Korea</option>
+            <option value="NL">Netherlands</option>
+            <option value="SE">Sweden</option>
+            <option value="NO">Norway</option>
+            <option value="DK">Denmark</option>
+            <option value="FI">Finland</option>
+            <option value="ES">Spain</option>
+            <option value="IT">Italy</option>
+            <option value="MX">Mexico</option>
+            <option value="AR">Argentina</option>
+            <option value="ZA">South Africa</option>
+            <option value="NG">Nigeria</option>
+            <option value="EG">Egypt</option>
+            <option value="TR">Turkey</option>
+            <option value="RU">Russia</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="CH">Switzerland</option>
+            <option value="BE">Belgium</option>
+            <option value="AT">Austria</option>
+            <option value="NZ">New Zealand</option>
+            <option value="SG">Singapore</option>
+            <option value="MY">Malaysia</option>
+            <option value="ID">Indonesia</option>
+            <option value="PH">Philippines</option>
+            <option value="TH">Thailand</option>
+            <option value="VN">Vietnam</option>
+            <option value="PK">Pakistan</option>
+            <option value="BD">Bangladesh</option>
+            <option value="LK">Sri Lanka</option>
+          </select>
+          <div class="mb-3">
+            <label for="optional-city" class="form-label maintext"
+              >City <span class="subtext"> (optional)</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="optional-city"
+              placeholder="Another input placeholder"
+            />
+          </div>
+          <button class="submit-btn mt-4">Continue</button>
+        </div>
+        <!-- end card three -->
       </div>
+      <!-- end the signup cards -->
     </div>
-    </div>
-
-
   </body>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/scripte.js"></script>
