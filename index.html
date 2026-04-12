@@ -56,19 +56,19 @@
           <button class="submit-btn mb-4">Sign in</button>
 
           <div class="login-link">
-            Already on Let's link? <a href="#" class="links">Sign in</a>
+            New to Let's link? <a href="#" class="links">Join now</a>
           </div>
         </div>
       </div>
       <!-- end the login card -->
 
       <!-- start the signup cards -->
-      <div class="signup-card">
+      <div class="signup-card ">
         <!-- start card one -->
-        <div class="card">
+        <div class="card active">
           <h1 class="title mb-4">join let's link now — it's free!</h1>
 
-          <div class="form-floating mb-3 is-invalid">
+          <div class="form-floating mb-3">
             <input
               type="email"
               class="form-control is-invalid"
@@ -95,7 +95,7 @@
             <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and
             <a href="#">Cookie Policy</a>.
           </p>
-          <button class="submit-btn mb-4">Agree &amp; Join</button>
+          <button class="submit-btn mb-4" id="st-btn-signup">Agree &amp; Join</button>
           <div class="or-divider">or</div>
           <button class="btn-google mb-4">
             <img
@@ -137,13 +137,13 @@
         <!-- end card two -->
 
         <!-- start card three -->
-        <div class="card active">
+        <div class="card ">
           <h1 class="title mb-4">join let's link now — it's free!</h1>
           <label for="country-select" class="form-label maintext"
             >Choose your country</label
           >
           <select
-            class="form-select mb-3"
+            class="form-select mb-3 is-invalid"
             aria-label="Default select example"
             id="country-select"
           >
@@ -189,6 +189,7 @@
             <option value="BD">Bangladesh</option>
             <option value="LK">Sri Lanka</option>
           </select>
+          <div class="invalid-feedback">Please enter your first name.</div>
           <div class="mb-3">
             <label for="optional-city" class="form-label maintext"
               >City <span class="subtext"> (optional)</span></label
