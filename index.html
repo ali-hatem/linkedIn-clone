@@ -8,20 +8,64 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <div class="logo">
+      <img src="assets/images/logowithword.png" alt="">
+    </div>
     <div class="main">
+      <div class="login-card hidden">
+        
+        <div class="card active">
+          <h1 class="title mb-4">Sign in</h1>
+          
+        <button class="btn-google mb-2">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"/>
+          Continue with Google
+        </button>
+        <p>
+          By clicking  Continue, you agree to the LinkedIn
+          <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>,
+          and <a href="#">Cookie Policy</a>.
+        </p>
+
+        <div class="or-divider">or</div>
+
+        <div class="form-item">
+          <label class="form-label" for="emailInput">Email address</label>
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="e.g. john@example.com"
+            autocomplete="email"
+          />
+        </div>
+        <div class="form-item">
+          <label class="form-label" for="passwordInput">Password</label>
+          <div class="pw-container">
+            <input
+              type="password"
+              id="passwordInput"
+              placeholder="Password"
+            />
+            <span class="links show-pw">show</span>
+          </div>
+        </div>
+        <a href="#" class="links forgetpassword">forget password?</a>
+        
+
+        
+        <button class="submit-btn mb-4">Sign in</button>
+
+
+        <div class="login-link">
+          Already on Let's link? <a href="#" class="links">Sign in</a>
+        </div>
+      </div>
+    </div>
     <div class="signup-card">
 
       <div class="card active">
         <h1 class="title mb-4">join let's link now — it's free!</h1>
         
-        <!-- Google Sign Up -->
-        <button class="btn-google">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"/>
-          Continue with Google
-        </button>
-
-        <div class="or-divider">or</div>
-
         <div class="form-item">
           <label class="form-label" for="emailInput">Email address</label>
           <input
@@ -51,7 +95,11 @@
           and <a href="#">Cookie Policy</a>.
         </p>
         <button class="submit-btn mb-4">Agree &amp; Join</button>
-
+        <div class="or-divider">or</div>
+        <button class="btn-google mb-4">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"/>
+          Continue with Google
+        </button>
 
         <div class="login-link">
           Already on Let's link? <a href="#" class="links">Sign in</a>
