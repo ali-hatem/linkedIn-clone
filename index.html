@@ -13,7 +13,7 @@
     </div>
     <div class="main">
       <!-- start the login card -->
-      <div class="login-card hidden">
+      <div class="login-card hidden" id="login-card">
         <div class="card active">
           <h1 class="title mb-4">Sign in</h1>
 
@@ -35,44 +35,53 @@
           <div class="form-item">
             <label class="form-label" for="emailInput">Email address</label>
             <input
+            class="form-control"
+              id="login-email"
               type="email"
               placeholder="e.g. john@example.com"
               autocomplete="email"
             />
+            <div class="invalid-feedback">Please enter an Email address</div>
           </div>
           <div class="form-item">
             <label class="form-label" for="passwordInput">Password</label>
             <div class="pw-container">
               <input
+                class="form-control"
                 type="password"
                 id="passwordInput"
                 placeholder="Password"
               />
-              <span class="links show-pw">show</span>
+              <span class="links show-pw" onclick="loginShowPassword()"
+                >show</span
+              >
+              <div class="invalid-feedback">Please enter your password</div>
             </div>
           </div>
           <a href="#" class="links forgetpassword">forget password?</a>
 
-          <button class="submit-btn mb-4">Sign in</button>
+          <button class="submit-btn mb-4" id="login-btn">Sign in</button>
 
           <div class="login-link">
-            New to Let's link? <a href="#" class="links">Join now</a>
+            New to Let's link?
+            <a href="#" class="links" onclick="switchToSignup()">Join now</a>
           </div>
         </div>
       </div>
       <!-- end the login card -->
 
       <!-- start the signup cards -->
-      <div class="signup-card ">
+      <div class="signup-card" id="signup-card">
         <!-- start card one -->
-        <div class="card active">
+        <div class="card active" id="stCard">
           <h1 class="title mb-4">join let's link now — it's free!</h1>
 
           <div class="form-floating mb-3">
             <input
+              onkeyup="validation(this)"
               type="email"
-              class="form-control is-invalid"
-              id="floatingInput"
+              class="form-control"
+              id="user-email-signup"
               placeholder="name@example.com"
             />
             <label for="floatingInput">Email address</label>
@@ -80,13 +89,14 @@
           </div>
           <div class="form-floating is-invalid">
             <input
+              onkeyup="validation(this)"
               type="password"
-              class="form-control is-invalid"
-              id="floatingPassword"
+              class="form-control"
+              id="user-password-signup"
               placeholder="Password"
             />
             <label for="floatingPassword">Password</label>
-            <span class="links show-pw">show</span>
+            <span class="links show-pw" onclick="showPassword()">show</span>
             <div class="invalid-feedback">Please enter your password</div>
           </div>
 
@@ -95,7 +105,9 @@
             <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and
             <a href="#">Cookie Policy</a>.
           </p>
-          <button class="submit-btn mb-4" id="st-btn-signup">Agree &amp; Join</button>
+          <button class="submit-btn mb-4" id="st-btn-signup">
+            Agree &amp; Join
+          </button>
           <div class="or-divider">or</div>
           <button class="btn-google mb-4">
             <img
@@ -106,48 +118,53 @@
           </button>
 
           <div class="login-link">
-            Already on Let's link? <a href="#" class="links">Sign in</a>
+            Already on Let's link?
+            <a href="#" class="links" onclick="switchToSignin()">Sign in</a>
           </div>
         </div>
         <!-- end card one  -->
 
         <!-- start card two  -->
-        <div class="card">
+        <div class="card" id="ndCard">
           <h1 class="title mb-4">join let's link now — it's free!</h1>
-          <div class="form-floating mb-3 is-invalid">
+          <div class="form-floating mb-3">
             <input
+            id="fname-input"
+              onkeyup="validation(this)"
               type="text"
-              class="form-control is-invalid"
+              class="form-control"
               placeholder="name@example.com"
             />
             <label for="floatingInput">First Name</label>
             <div class="invalid-feedback">Please enter your first name.</div>
           </div>
-          <div class="form-floating is-invalid">
+          <div class="form-floating">
             <input
-              type="password"
-              class="form-control is-invalid"
+            id="lname-input"
+              onkeyup="validation(this)"
+              type="text"
+              class="form-control"
               placeholder="text"
             />
             <label for="floatingPassword">Last Name</label>
+            <div class="invalid-feedback">Please enter your last name.</div>
           </div>
-          <div class="invalid-feedback">Please enter your last name.</div>
-          <button class="submit-btn mt-4">Continue</button>
+          <button class="submit-btn mt-4" id="ndSignupBtn">Continue</button>
         </div>
         <!-- end card two -->
 
         <!-- start card three -->
-        <div class="card ">
+        <div class="card" id="rdcard">
           <h1 class="title mb-4">join let's link now — it's free!</h1>
           <label for="country-select" class="form-label maintext"
             >Choose your country</label
           >
           <select
-            class="form-select mb-3 is-invalid"
+            class="form-select mb-3"
             aria-label="Default select example"
             id="country-select"
           >
-            <option selected>Choose a country</option>
+            <option selected value="">Choose a country</option>
             <option value="US">United States</option>
             <option value="GB">United Kingdom</option>
             <option value="CA">Canada</option>
@@ -189,7 +206,7 @@
             <option value="BD">Bangladesh</option>
             <option value="LK">Sri Lanka</option>
           </select>
-          <div class="invalid-feedback">Please enter your first name.</div>
+          <div class="invalid-feedback">Please choose a country.</div>
           <div class="mb-3">
             <label for="optional-city" class="form-label maintext"
               >City <span class="subtext"> (optional)</span></label
@@ -201,7 +218,7 @@
               placeholder="Another input placeholder"
             />
           </div>
-          <button class="submit-btn mt-4">Continue</button>
+          <button class="submit-btn mt-4" id="rd-signup-btn">Continue</button>
         </div>
         <!-- end card three -->
       </div>
