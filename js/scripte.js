@@ -1,4 +1,3 @@
-let user = [];
 let users = [];
 let signupEmail = document.getElementById("user-email-signup");
 let signupPassword = document.getElementById("user-password-signup");
@@ -8,41 +7,45 @@ let stSignupBtn = document.getElementById("st-btn-signup");
 let ndSignupBtn = document.getElementById("ndSignupBtn");
 let rdSignupBtn = document.getElementById("rd-signup-btn");
 let loginBtn = document.getElementById("login-btn");
-let fnameSignup = document.getElementById("fname-input")
-let lnameSignup = document.getElementById("lname-input")
-let countrySelect = document.getElementById("country-select")
-let city = document.getElementById("optional-city")
+let fnameSignup = document.getElementById("fname-input");
+let lnameSignup = document.getElementById("lname-input");
+let countrySelect = document.getElementById("country-select");
+let city = document.getElementById("optional-city");
+
 
 users = getUsersFromLocalStorage();
-function setUsersToLocalStorage(user) {
-  localStorage.setItem(`users`, JSON.stringify(user));
-}
 
 function getUsersFromLocalStorage() {
-  let result = JSON.parse(localStorage.getItem(`users`));
-  return result
+  let result = JSON.parse(localStorage.getItem('users'));
+  return Array.isArray(result) ? result : [];
+}
+
+function setUsersToLocalStorage() {
+  localStorage.setItem('users', JSON.stringify(users));
 }
 
 function userAllDataFromAllForms(){
-    let form1 =getForm1DataFromSessionStorage()
-    let form2 =getForm2DataFromSessionStorage()
-    let form3 =getForm3DataFromSessionStorage()
-    user.push(form1)
-    user.push(form2)
-    user.push(form3)  
-    let userFullData = Object.assign({}, ...user);
-     setUserFullData(userFullData)
-     setUsersToLocalStorage(userFullData)  
-    
+    let form1 = getForm1DataFromSessionStorage();
+    let form2 = getForm2DataFromSessionStorage();
+    let form3 = getForm3DataFromSessionStorage();
+    let userFullData = { ...form1, ...form2, ...form3 };
+    setUserFullData(userFullData);
+    users.push(userFullData);
+    setUsersToLocalStorage();
 }
 
 function setUserFullData(user){
-    localStorage.setItem("user", JSON.stringify(user))
+    localStorage.setItem("user", JSON.stringify(user));
 }
 
 function getUserFullData(){
-    let result = JSON.parse(localStorage.getItem(user))
+    let result = JSON.parse(localStorage.getItem('user'));
     return result;
+}
+
+function isValidEmail(email) {
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
 function validation(input) {
@@ -50,33 +53,30 @@ function validation(input) {
 }
 
 function addForm1ToSessionStorage(object){
-    let user1 = object
-    sessionStorage.setItem(`formOne`, JSON.stringify(user1))
+    sessionStorage.setItem('formOne', JSON.stringify(object));
 }
 
 function getForm1DataFromSessionStorage(){
-    let result = JSON.parse(sessionStorage.getItem(`formOne`))
-    return result
+    let result = JSON.parse(sessionStorage.getItem('formOne'));
+    return result || {};
 }
 
 function addForm2ToSessionStorage(object){
-    let user2 = object
-    sessionStorage.setItem(`formTwo`, JSON.stringify(user2))
+    sessionStorage.setItem('formTwo', JSON.stringify(object));
 }
 
 function getForm2DataFromSessionStorage(){
-    let result = JSON.parse(sessionStorage.getItem(`formTwo`))
-    return result
+    let result = JSON.parse(sessionStorage.getItem('formTwo'));
+    return result || {};
 }
 
 function addForm3ToSessionStorage(object){
-    let user3 = object
-    sessionStorage.setItem(`formThree`, JSON.stringify(user3))
+    sessionStorage.setItem('formThree', JSON.stringify(object));
 }
 
 function getForm3DataFromSessionStorage(){
-    let result = JSON.parse(sessionStorage.getItem(`formThree`))
-    return result
+    let result = JSON.parse(sessionStorage.getItem('formThree'));
+    return result || {};
 }
 
 function switchToSignin() {
@@ -101,35 +101,68 @@ function showPassword() {
 
 loginBtn.addEventListener("click", function(){
     if(loginEmail.value == "" || loginPassword.value == ""){
-      validation(loginEmail)
-      validation(loginPassword)
+      validation(loginEmail);
+      validation(loginPassword);
+      return;
     }
-    else
-        window.location.href = "feeds.html"
-})
 
-stSignupBtn.addEventListener("click", function () {
-  if(signupEmail.value == "" || signupPassword.value == ""){
-      validation(signupEmail)
-      validation(signupPassword)
+    if (!isValidEmail(loginEmail.value)) {
+      loginEmail.classList.add("is-invalid"); 
+      alert("Please enter a valid email address");
+      return;
+    } else {
+      loginEmail.classList.remove("is-invalid"); 
     }
-    let checked = false
+
+    let foundUser = false;
     for(let i = 0; i < users.length; i++){
-        if(users[i].email != signupEmail.value){
-            checked = true;
+        if(users[i].email == loginEmail.value && users[i].password == loginPassword.value){
+            foundUser = true;
             break;
         }
     }
-        if(checked == true)
-        {
-            let stUserSignupForm = {
-                email: signupEmail.value,
-                password: signupPassword.value,
-            };
-            addForm1ToSessionStorage(stUserSignupForm);
-            document.getElementById("stCard").classList.remove("active");
-            document.getElementById("ndCard").classList.add("active");
+    
+    if(foundUser){
+        window.location.href = "feeds.html"
+    } else {
+        let emailExists = users.some(u => u.email == loginEmail.value);
+        if(emailExists) {
+            alert("wrong password try again");
+        } else {
+            alert("email does not exist please signup or use another email");
         }
+    }
+});
+
+stSignupBtn.addEventListener("click", function () {
+  if(signupEmail.value == "" || signupPassword.value == ""){
+      validation(signupEmail);
+      validation(signupPassword);
+      return;
+    }
+
+  if (!isValidEmail(signupEmail.value)) {
+    signupEmail.classList.add("is-invalid"); 
+    alert("Please enter a valid email address");
+    return;
+  } else {
+    signupEmail.classList.remove("is-invalid"); 
+  }
+
+  let emailAlreadyExists = users.some(u => u.email == signupEmail.value);
+    if(emailAlreadyExists) {
+        alert("email already exist please user another email");
+        return;
+    }
+    
+    let stUserSignupForm = {
+        email: signupEmail.value,
+        password: signupPassword.value,
+    };
+    alert("done");
+    addForm1ToSessionStorage(stUserSignupForm);
+    document.getElementById("stCard").classList.remove("active");
+    document.getElementById("ndCard").classList.add("active");
 });
 ndSignupBtn.addEventListener("click", function () {
   if(fnameSignup.value == "" || lnameSignup.value == ""){
@@ -157,7 +190,7 @@ rdSignupBtn.addEventListener("click", function(){
   }
   addForm3ToSessionStorage(rdUserSignupForm);
   userAllDataFromAllForms()
-//   window.location.href = "feeds.html"
+  window.location.href = "feeds.html"
 }
 })
 
