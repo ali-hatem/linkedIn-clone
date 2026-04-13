@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LinkedIn Feed</title>
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/feeds.css">
+  </head>
+<body>
+
+  <nav class="navbar navbar-expand navbar-light bg-white border-bottom fixed-top shadow-sm" style="height: 52px;">
+    <div class="container-xl px-3">
+      <a class="navbar-brand d-flex align-items-center me-4" href="#">
+        <i class="bi bi-linkedin text-primary" style="font-size: 2.2rem;"></i>
+      </a>
+
+      <div class="flex-grow-1" style="max-width: 280px;">
+        <div class="position-relative">
+          <i class="bi bi-search position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #666;"></i>
+          <input type="text" class="form-control rounded-1 ps-4" placeholder="Search" style="background-color: #edf3f8; border: none;">
+        </div>
+      </div>
+
+      <ul class="navbar-nav ms-auto mb-0">
+        <li class="nav-item me-3">
+          <a class="nav-link text-dark text-center" href="#">
+            <i class="bi bi-house-door-fill d-block" style="font-size: 1.2rem;"></i>
+            <small style="font-size: 0.75rem;">Home</small>
+          </a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-secondary text-center" href="#">
+            <i class="bi bi-people d-block" style="font-size: 1.2rem;"></i>
+            <small style="font-size: 0.75rem;">My Network</small>
+          </a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-secondary text-center" href="#">
+            <i class="bi bi-briefcase d-block" style="font-size: 1.2rem;"></i>
+            <small style="font-size: 0.75rem;">Jobs</small>
+          </a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-secondary text-center" href="#">
+            <i class="bi bi-chat-dots d-block" style="font-size: 1.2rem;"></i>
+            <small style="font-size: 0.75rem;">Messaging</small>
+          </a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-secondary text-center" href="#">
+            <i class="bi bi-bell d-block" style="font-size: 1.2rem;"></i>
+            <small style="font-size: 0.75rem;">Notifications</small>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-secondary text-center" href="#" role="button" data-bs-toggle="dropdown">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&background=0a66c2&color=fff&size=32" class="rounded-circle d-block mx-auto" width="24" height="24" alt="Me">
+            <small style="font-size: 0.75rem;">Me <i class="bi bi-caret-down-fill" style="font-size: 0.6rem;"></i></small>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">View Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings & Privacy</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container-xl px-3" style="margin-top: 72px;">
+    <div class="row">
+
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="card rounded-3 mb-3 profile-card">
+          <div class="text-center pt-4 pb-2 profile-banner"></div>
+          <div class="card-body pt-0 pb-3 text-center">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&background=0a66c2&color=fff&size=80" class="rounded-circle border border-3 border-white mb-2" width="72" height="72" alt="Profile">
+            <h6 class="mb-0 fw-semibold profile-name"><a href="#" class="text-decoration-none">John Doe</a></h6>
+            <p class="profile-headline small mb-2">Software Engineer | Full-Stack Developer</p>
+            <hr class="my-2">
+            <div class="text-start px-3">
+              <p class="small mb-1"><span class="stat-label">Profile viewers</span> <span class="float-end stat-value">142</span></p>
+              <p class="small mb-1"><span class="stat-label">Post impressions</span> <span class="float-end stat-value">1,203</span></p>
+            </div>
+            <hr class="my-2">
+            <a href="#" class="d-block sidebar-link small py-1">
+              <i class="bi bi-bookmark me-1"></i> My items
+            </a>
+          </div>
+        </div>
+
+        <div class="card rounded-3 sidebar-section">
+          <div class="card-body py-3">
+            <a href="#" class="d-block small py-1"><i class="bi bi-people me-1"></i> Groups</a>
+            <a href="#" class="d-block small py-1"><i class="bi bi-megaphone me-1"></i> Events</a>
+            <a href="#" class="d-block small py-1"><i class="bi bi-bookmark me-1"></i> Saved posts</a>
+            <hr class="my-2">
+            <h6 class="small fw-semibold px-2">Recent</h6>
+            <a href="#" class="d-block small hashtag-link py-1"><i class="bi bi-hashtag me-1"></i> webdevelopment</a>
+            <a href="#" class="d-block small hashtag-link py-1"><i class="bi bi-hashtag me-1"></i> reactjs</a>
+            <a href="#" class="d-block small hashtag-link py-1"><i class="bi bi-hashtag me-1"></i> pythonprogramming</a>
+            <a href="#" class="d-block small hashtag-link py-1"><i class="bi bi-file-earmark-code me-1"></i> JavaScript Developers</a>
+            <a href="#" class="d-block small py-1" style="color: var(--li-blue); font-weight: 600;">Show more <i class="bi bi-plus-circle"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+
+        <div class="card rounded-3 mb-3">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://ui-avatars.com/api/?name=John+Doe&background=0a66c2&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="Me">
+              <button class="btn flex-grow-1 text-start create-post-btn py-2 px-3" data-bs-toggle="modal" data-bs-target="#createPostModal">Start a post, try writing with AI</button>
+            </div>
+            <div class="d-flex justify-content-around">
+              <button class="btn post-action-btn">
+                <i class="bi bi-file-earmark-image me-1" style="color: #378fe9;"></i>
+                <small class="fw-semibold">Media</small>
+              </button>
+              <button class="btn post-action-btn">
+                <i class="bi bi-calendar-event me-1" style="color: #c37d16;"></i>
+                <small class="fw-semibold">Event</small>
+              </button>
+              <button class="btn post-action-btn">
+                <i class="bi bi-newspaper me-1" style="color: #e06847;"></i>
+                <small class="fw-semibold">Write article</small>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+          <div class="vr me-2" style="height: 16px;"></div>
+          <small class="text-muted">Sort by: <strong style="color: var(--li-text);">Top <i class="bi bi-caret-down-fill" style="font-size: 0.6rem;"></i></strong></small>
+        </div>
+
+        <div class="card rounded-3 post-card">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-start mb-2">
+              <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=e83e8c&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-semibold"><a href="#" class="post-author-name text-decoration-none">Sarah Smith</a> <i class="bi bi-patch-check" style="color: var(--li-blue); font-size: 0.9rem;"></i></h6>
+                <p class="post-author-headline small mb-0">Senior Tech Recruiter at Google | 100K+ followers</p>
+                <p class="post-timestamp small mb-0">2h • <i class="bi bi-globe"></i></p>
+              </div>
+              <button class="btn text-muted p-1"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <div class="post-content">
+            <p class="mb-2">🚀 Exciting times in tech! Google just announced a major expansion in AI infrastructure, creating <strong>5,000+ new roles</strong> across engineering, data science, and product.</p>
+            <p class="mb-2">If you're a software engineer, ML engineer, or product manager looking for your next challenge — this could be your moment.</p>
+            <p class="mb-2">Key roles hiring:<br>
+            ✅ Senior Software Engineer — Mountain View<br>
+            ✅ ML Infrastructure Engineer — NYC<br>
+            ✅ Technical Program Manager — Remote<br>
+            ✅ Product Manager, AI Platform — Seattle</p>
+            <p class="mb-0">Know someone who'd be a great fit? Tag them below! 👇</p>
+            </div>
+            <span class="badge"> #TechJobs</span>
+            <span class="badge">#GoogleCareers</span>
+            <span class="badge">#AIJobs</span>
+            <span class="badge">#Hiring</span>
+
+            <div class="mt-2 rounded-2 overflow-hidden">
+              <img src="https://placehold.co/600x340/e9ecef/495057?text=Google+AI+Expansion" class="img-fluid w-100" alt="Post image">
+            </div>
+
+            <div class="d-flex align-items-center mt-2 mb-1">
+              <div class="d-flex me-auto">
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-blue);">👍</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-error);">❤</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-green);">🎉</span>
+              </div>
+              <a href="#" class="reaction-count ms-2 text-decoration-none small">2,847 reactions • 342 comments</a>
+            </div>
+
+            <hr class="my-1 post-actions">
+            <div class="d-flex justify-content-around py-1 post-actions">
+              <button class="btn post-action-btn post-action-btn-recommend flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-hand-thumbs-up me-1" style="font-size:1.1rem;"></i> <span class="small">Recommend</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-comment flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat me-1" style="font-size:1.1rem;"></i> <span class="small">Comment</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-repost flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-repeat me-1" style="font-size:1.1rem;"></i> <span class="small">Repost</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-send flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-send me-1" style="font-size:1.1rem;"></i> <span class="small">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 post-card">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-start mb-2">
+              <img src="https://ui-avatars.com/api/?name=Alex+Chen&background=28a745&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-semibold"><a href="#" class="post-author-name text-decoration-none">Alex Chen</a></h6>
+                <p class="post-author-headline small mb-0">Staff Engineer @ Netflix | Ex-Amazon | Speaker</p>
+                <p class="post-timestamp small mb-0">5h • <i class="bi bi-globe"></i></p>
+              </div>
+              <button class="btn text-muted p-1"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <div class="post-content">
+            <p class="mb-2">I've been interviewing candidates for 8+ years now. Here's what I've learned:</p>
+            <p class="mb-2"><strong>The best engineers don't memorize algorithms the night before.</strong></p>
+            <p class="mb-2">They build real things. They ship. They iterate. They learn from failures in production.</p>
+            <p class="mb-2">In interviews, I don't care if you know the optimal solution. I care about:</p>
+            <p class="mb-2">
+            1. Can you break down a vague problem?<br>
+            2. Can you communicate your thinking?<br>
+            3. Can you handle edge cases?<br>
+            4. Can you adapt when requirements change?</p>
+            <p class="mb-0">Stop grinding LeetCode. Start building. 💪</p>
+            </div>
+
+            <div class="d-flex align-items-center mt-2 mb-1">
+              <div class="d-flex me-auto">
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-blue);">👍</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-error);">❤</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: #0d6efd;">💡</span>
+              </div>
+              <a href="#" class="reaction-count ms-2 text-decoration-none small">12,493 reactions • 1,024 comments</a>
+            </div>
+
+            <hr class="my-1 post-actions">
+            <div class="d-flex justify-content-around py-1 post-actions">
+              <button class="btn post-action-btn post-action-btn-recommend flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-hand-thumbs-up me-1" style="font-size:1.1rem;"></i> <span class="small">Recommend</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-comment flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat me-1" style="font-size:1.1rem;"></i> <span class="small">Comment</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-repost flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-repeat me-1" style="font-size:1.1rem;"></i> <span class="small">Repost</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-send flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-send me-1" style="font-size:1.1rem;"></i> <span class="small">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 post-card">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-start mb-2">
+              <img src="https://ui-avatars.com/api/?name=Microsoft&background=0078d4&color=fff&size=48" class="rounded me-2" width="48" height="48" alt="Company" style="border-radius: 8px;">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-semibold">Microsoft <span class="badge ms-1" style="font-size: 0.65rem; background-color: var(--li-muted);">Promoted</span></h6>
+                <p class="post-author-headline small mb-0">Technology Company</p>
+              </div>
+              <button class="btn text-muted p-1"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <div class="post-content">
+            <p class="mb-2">Ready to take your career to the next level? 🌟</p>
+            <p class="mb-2">We're investing <strong>$10B+ in AI and cloud infrastructure</strong> — and we need talented engineers to help us build the future.</p>
+            <p class="mb-0">Explore opportunities in engineering, data science, product management, and more.</p>
+            </div>
+
+            <div class="mt-2 rounded-2 overflow-hidden">
+              <img src="https://placehold.co/600x300/0078d4/ffffff?text=Microsoft+Careers+-+Join+Us" class="img-fluid w-100" alt="Promoted">
+            </div>
+
+            <div class="d-flex align-items-center mt-2 mb-1">
+              <div class="d-flex me-auto">
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-blue);">👍</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-error);">❤</span>
+              </div>
+              <a href="#" class="reaction-count ms-2 text-decoration-none small">4,102 reactions • 528 comments</a>
+            </div>
+
+            <hr class="my-1 post-actions">
+            <div class="d-flex justify-content-around py-1 post-actions">
+              <button class="btn post-action-btn post-action-btn-recommend flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-hand-thumbs-up me-1" style="font-size:1.1rem;"></i> <span class="small">Recommend</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-comment flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat me-1" style="font-size:1.1rem;"></i> <span class="small">Comment</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-repost flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-repeat me-1" style="font-size:1.1rem;"></i> <span class="small">Repost</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-send flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-send me-1" style="font-size:1.1rem;"></i> <span class="small">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 post-card">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-start mb-2">
+              <img src="https://ui-avatars.com/api/?name=Emily+Rodriguez&background=6f42c1&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-semibold"><a href="#" class="post-author-name text-decoration-none">Emily Rodriguez</a></h6>
+                <p class="post-author-headline small mb-0">VP of Engineering @ Spotify | Forbes 30 Under 30</p>
+                <p class="post-timestamp small mb-0">8h • <i class="bi bi-globe"></i></p>
+              </div>
+              <button class="btn text-muted p-1"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <div class="post-content">
+            <p class="mb-2">I'm thrilled to share that our team just launched <strong>Spotify's new AI DJ feature</strong> — a personalized music experience powered by machine learning 🎵🤖</p>
+            <p class="mb-2">After 18 months of research, development, and countless late nights, we've created something truly magical for our 500M+ users.</p>
+            <p class="mb-2">Massive shoutout to the entire team who made this possible. This is what happens when you put talented people in a room and let them innovate.</p>
+            <p class="mb-0">Try it out and let me know what you think! 🎧</p>
+            </div>
+
+            <div class="mt-2 rounded-2 overflow-hidden">
+              <img src="https://placehold.co/600x340/1db954/ffffff?text=Spotify+AI+DJ+-+Your+Music,+Personalized" class="img-fluid w-100" alt="Post image">
+            </div>
+
+            <div class="d-flex align-items-center mt-2 mb-1">
+              <div class="d-flex me-auto">
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-blue);">👍</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-error);">❤</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-green);">🎉</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: #0d6efd;">💡</span>
+              </div>
+              <a href="#" class="reaction-count ms-2 text-decoration-none small">8,291 reactions • 645 comments</a>
+            </div>
+
+            <hr class="my-1 post-actions">
+            <div class="d-flex justify-content-around py-1 post-actions">
+              <button class="btn post-action-btn post-action-btn-recommend flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-hand-thumbs-up me-1" style="font-size:1.1rem;"></i> <span class="small">Recommend</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-comment flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat me-1" style="font-size:1.1rem;"></i> <span class="small">Comment</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-repost flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-repeat me-1" style="font-size:1.1rem;"></i> <span class="small">Repost</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-send flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-send me-1" style="font-size:1.1rem;"></i> <span class="small">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 post-card">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-start mb-2">
+              <img src="https://ui-avatars.com/api/?name=David+Park&background=fd7e14&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-semibold"><a href="#" class="post-author-name text-decoration-none">David Park</a></h6>
+                <p class="post-author-headline small mb-0">Founder & CEO @ TechStart | Y Combinator S22</p>
+                <p class="post-timestamp small mb-0">12h • <i class="bi bi-globe"></i></p>
+              </div>
+              <button class="btn text-muted p-1"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <div class="post-content">
+            <p class="mb-2">Unpopular opinion: <strong>most startups don't fail because of bad ideas.</strong></p>
+            <p class="mb-2">They fail because the founders can't work together.</p>
+            <p class="mb-2">After building 2 startups (1 failed, 1 acquired), here's what actually matters:</p>
+            <p class="mb-2">
+            ❌ Not the perfect tech stack<br>
+            ❌ Not a brilliant idea<br>
+            ❌ Not the best pitch deck<br><br>
+            ✅ Co-founder trust & communication<br>
+            ✅ Ability to pivot quickly<br>
+            ✅ Ruthless prioritization<br>
+            ✅ Financial discipline<br>
+            ✅ Hiring people smarter than you</p>
+            <p class="mb-0">The hardest part of building a company isn't the product — it's the people. Invest in your team first. 🙌</p>
+            </div>
+
+            <div class="d-flex align-items-center mt-2 mb-1">
+              <div class="d-flex me-auto">
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-blue);">👍</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: #0d6efd;">💡</span>
+              </div>
+              <a href="#" class="reaction-count ms-2 text-decoration-none small">6,721 reactions • 892 comments</a>
+            </div>
+
+            <hr class="my-1 post-actions">
+            <div class="d-flex justify-content-around py-1 post-actions">
+              <button class="btn post-action-btn post-action-btn-recommend flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-hand-thumbs-up me-1" style="font-size:1.1rem;"></i> <span class="small">Recommend</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-comment flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat me-1" style="font-size:1.1rem;"></i> <span class="small">Comment</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-repost flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-repeat me-1" style="font-size:1.1rem;"></i> <span class="small">Repost</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-send flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-send me-1" style="font-size:1.1rem;"></i> <span class="small">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 post-card">
+          <div class="card-body pb-2">
+            <div class="d-flex align-items-start mb-2">
+              <img src="https://ui-avatars.com/api/?name=Jennifer+Williams&background=dc3545&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-semibold"><a href="#" class="post-author-name text-decoration-none">Jennifer Williams</a></h6>
+                <p class="post-author-headline small mb-0">Product Design Lead @ Apple | UX Thought Leader</p>
+                <p class="post-timestamp small mb-0">1d • <i class="bi bi-globe"></i></p>
+              </div>
+              <button class="btn text-muted p-1"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <div class="post-content">
+            <p class="mb-2">🎨 Design tip of the day:</p>
+            <p class="mb-2"><strong>"If you think good design is expensive, think again. Bad design costs you way more."</strong></p>
+            <p class="mb-2">I've seen companies spend millions on marketing and customer acquisition, only to lose users because of a confusing onboarding flow.</p>
+            <p class="mb-2">Investing in UX isn't a luxury — it's a business imperative. Every dollar spent on UX returns $10-$100 in revenue. That's a 10,000% ROI.</p>
+            <p class="mb-0">Your users don't care about your tech stack. They care about whether your product makes their life easier. Design for them. ❤️</p>
+            </div>
+
+            <div class="mt-2 rounded-2 overflow-hidden">
+              <img src="https://placehold.co/600x300/f5f5f5/333333?text=Good+Design+%3D+Better+Business" class="img-fluid w-100" alt="Design quote">
+            </div>
+
+            <div class="d-flex align-items-center mt-2 mb-1">
+              <div class="d-flex me-auto">
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-error);">❤</span>
+                <span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center ms-1" style="width:20px;height:20px;font-size:0.7rem; background-color: var(--li-blue);">👍</span>
+              </div>
+              <a href="#" class="reaction-count ms-2 text-decoration-none small">15,983 reactions • 1,204 comments</a>
+            </div>
+
+            <hr class="my-1 post-actions">
+            <div class="d-flex justify-content-around py-1 post-actions">
+              <button class="btn post-action-btn post-action-btn-recommend flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-hand-thumbs-up me-1" style="font-size:1.1rem;"></i> <span class="small">Recommend</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-comment flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat me-1" style="font-size:1.1rem;"></i> <span class="small">Comment</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-repost flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-repeat me-1" style="font-size:1.1rem;"></i> <span class="small">Repost</span>
+              </button>
+              <button class="btn post-action-btn post-action-btn-send flex-grow-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-send me-1" style="font-size:1.1rem;"></i> <span class="small">Send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center py-4">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="card rounded-3 mb-3">
+          <div class="card-body py-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="fw-semibold mb-0">LinkedIn News</h6>
+              <i class="bi bi-info-circle" style="color: var(--li-muted);"></i>
+            </div>
+
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a href="#" class="news-title small d-block">AI investment surge</a>
+                <small class="news-meta">Top news • 2,341 readers</small>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="news-title small d-block">Remote work evolution</a>
+                <small class="news-meta">14h ago • 1,892 readers</small>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="news-title small d-block">Tech layoffs slowdown</a>
+                <small class="news-meta">1d ago • 3,104 readers</small>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="news-title small d-block">Green energy jobs boom</a>
+                <small class="news-meta">6h ago • 987 readers</small>
+              </li>
+              <li class="mb-0">
+                <a href="#" class="news-title small d-block">Startup funding rebound</a>
+                <small class="news-meta">12h ago • 2,156 readers</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card rounded-3 mb-3">
+          <div class="card-body py-3">
+            <h6 class="fw-semibold mb-2">People you may know</h6>
+
+            <div class="d-flex align-items-center mb-2">
+              <img src="https://ui-avatars.com/api/?name=Lisa+Wang&background=20c997&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <a href="#" class="suggested-name small d-block">Lisa Wang</a>
+                <small class="suggested-headline d-block">PM @ Meta</small>
+              </div>
+              <button class="btn connect-btn px-2 py-1"><i class="bi bi-plus-lg me-1"></i>Connect</button>
+            </div>
+
+            <div class="d-flex align-items-center mb-2">
+              <img src="https://ui-avatars.com/api/?name=Tom+Anderson&background=0dcaf0&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <a href="#" class="suggested-name small d-block">Tom Anderson</a>
+                <small class="suggested-headline d-block">DevOps Lead @ AWS</small>
+              </div>
+              <button class="btn connect-btn px-2 py-1"><i class="bi bi-plus-lg me-1"></i>Connect</button>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <img src="https://ui-avatars.com/api/?name=Nina+Patel&background=ffc107&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="User">
+              <div class="flex-grow-1">
+                <a href="#" class="suggested-name small d-block">Nina Patel</a>
+                <small class="suggested-headline d-block">Data Scientist @ Tesla</small>
+              </div>
+              <button class="btn connect-btn px-2 py-1"><i class="bi bi-plus-lg me-1"></i>Connect</button>
+            </div>
+
+            <a href="#" class="d-block text-center small text-decoration-none mt-2" style="color: var(--li-blue); font-weight: 600;">Show all <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="card rounded-3 mb-3">
+          <div class="card-body py-3 text-center">
+            <small class="d-block mb-1" style="color: var(--li-muted);"><i class="bi bi-megaphone me-1"></i>Ad</small>
+            <img src="https://placehold.co/260x180/e9ecef/495057?text=Master+Full-Stack+Dev" class="img-fluid rounded-2 mb-2" alt="Ad">
+            <h6 class="fw-semibold small">Become a Full-Stack Developer</h6>
+            <p class="small mb-2" style="color: var(--li-muted);">Learn React, Node.js & more. 50% off this week!</p>
+            <a href="#" class="btn btn-sm rounded-pill px-3" style="background-color: var(--li-blue); border-color: var(--li-blue); color: var(--li-card);">Learn More</a>
+          </div>
+        </div>
+
+        <div class="text-center small footer-links">
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+            <a href="#">About</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Help Center</a>
+          </div>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+            <a href="#">Privacy & Terms</a>
+            <a href="#">Ad Choices</a>
+            <a href="#">Advertising</a>
+          </div>
+          <div>
+            <a href="#" style="color: var(--li-blue); font-weight: 600;">
+              <i class="bi bi-linkedin me-1"></i>LinkedIn
+            </a>
+            <span class="ms-1">© 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="modal fade" id="createPostModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header pb-0">
+          <h5 class="modal-title fw-semibold">Create a post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&background=0a66c2&color=fff&size=48" class="rounded-circle me-2" width="48" height="48" alt="Me">
+            <div>
+              <h6 class="mb-0 fw-semibold">John Doe</h6>
+              <button class="btn btn-sm rounded-pill px-2 py-0" style="font-size: 0.75rem; border: 1px solid var(--li-border); color: var(--li-muted);"><i class="bi bi-globe me-1"></i>Anyone <i class="bi bi-caret-down-fill" style="font-size: 0.6rem;"></i></button>
+            </div>
+          </div>
+          <textarea class="form-control border-0" rows="6" placeholder="What do you want to talk about?" style="font-size: 1.1rem; resize: none;"></textarea>
+
+          <div class="d-flex gap-3 mt-3">
+            <button class="btn p-0"><i class="bi bi-file-earmark-image fs-5" style="color: #378fe9;"></i></button>
+            <button class="btn p-0"><i class="bi bi-file-earmark-text fs-5" style="color: #e06847;"></i></button>
+            <button class="btn p-0"><i class="bi bi-calendar-event fs-5" style="color: #c37d16;"></i></button>
+            <button class="btn p-0"><i class="bi bi-collection fs-5" style="color: #7943cb;"></i></button>
+            <button class="btn p-0"><i class="bi bi-emoji-smile fs-5" style="color: #44712e;"></i></button>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <div class="d-flex gap-3">
+            <button class="btn p-0"><i class="bi bi-clock fs-5" style="color: var(--li-muted);"></i></button>
+            <button class="btn p-0"><i class="bi bi-three-dots fs-5" style="color: var(--li-muted);"></i></button>
+          </div>
+          <button class="btn post-btn px-4" disabled>Post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
