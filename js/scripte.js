@@ -1,4 +1,41 @@
-let users = [];
+let users = [{
+        id: 1,
+        email: "ahmed@gmail.com",
+        password: "123456",
+        firstName: "Ahmed",
+        lastName: "Ali",
+        country: "Egypt",
+        city: "Cairo",
+        skills: ["HTML", "CSS"],
+        posts: [],
+        connections: [{userId:2, status: "pending"},
+          {userId:3, status: "pending"}
+        ]
+      },
+      {
+        id: 2,
+        email: "sara@gmail.com",
+        password: "123456",
+        firstName: "Sara",
+        lastName: "Mohamed",
+        country: "Egypt",
+        city: "Alexandria",
+        skills: ["JavaScript"],
+        posts: [],
+        connections: [{userId:1, status: "pending"}]
+      },
+      {
+        id: 3,
+        email: "mark@gmail.com",
+        password: "123456",
+        firstName: "mark",
+        lastName: "martin",
+        country: "USA",
+        city: "New York",
+        skills: ["React"],
+        posts: [],
+        connections: [{userId:1, status: "pending"}]
+      }];
 let signupEmail = document.getElementById("user-email-signup");
 let signupPassword = document.getElementById("user-password-signup");
 let loginEmail = document.getElementById("login-email");
@@ -28,14 +65,15 @@ function userAllDataFromAllForms(){
     let form1 = getForm1DataFromSessionStorage();
     let form2 = getForm2DataFromSessionStorage();
     let form3 = getForm3DataFromSessionStorage();
-    let userFullData = { ...form1, ...form2, ...form3 };
+    let userId = Math.floor(Math.random()*1000)
+    let userFullData = {id: userId, ...form1, ...form2, ...form3,skills:[], posts:[],connections:[]  };
     setUserFullData(userFullData);
     users.push(userFullData);
     setUsersToLocalStorage();
 }
 
 function setUserFullData(user){
-    localStorage.setItem("user", JSON.stringify(user));
+    sessionStorage.setItem("user", JSON.stringify(user));
 }
 
 function getUserFullData(){
@@ -159,7 +197,6 @@ stSignupBtn.addEventListener("click", function () {
         email: signupEmail.value,
         password: signupPassword.value,
     };
-    alert("done");
     addForm1ToSessionStorage(stUserSignupForm);
     document.getElementById("stCard").classList.remove("active");
     document.getElementById("ndCard").classList.add("active");
@@ -168,8 +205,8 @@ ndSignupBtn.addEventListener("click", function () {
   if(fnameSignup.value == "" || lnameSignup.value == ""){
       validation(fnameSignup)
       validation(lnameSignup)
+      return;
     }
-    else{
   let ndUserSignupForm = {
     firstName: fnameSignup.value,
     lastName: lnameSignup.value,
@@ -177,13 +214,13 @@ ndSignupBtn.addEventListener("click", function () {
   addForm2ToSessionStorage(ndUserSignupForm);
   document.getElementById("ndCard").classList.remove("active");
   document.getElementById("rdcard").classList.add("active");
-  }
 });
 
 rdSignupBtn.addEventListener("click", function(){
     if(countrySelect.value == ""){
       validation(countrySelect)
-    }else{
+      return;
+    }
   let rdUserSignupForm = {
     country: countrySelect.value,
     city: city.value,
@@ -191,8 +228,15 @@ rdSignupBtn.addEventListener("click", function(){
   addForm3ToSessionStorage(rdUserSignupForm);
   userAllDataFromAllForms()
   window.location.href = "feeds.html"
-}
+
 })
 
+
+function register(email, password){
+  var newuser = {
+    email: email,
+    password: password
+  }
+}
 
 
