@@ -213,16 +213,17 @@ loginBtn.addEventListener("click", function(){
     }
 
     let foundUser = false;
-    for(let i = 0; i < users.length; i++){
+    let index = 0;
+    for(let i = 0; i < users.length; i++ , index++){
         if(users[i].email == loginEmail.value && users[i].password == loginPassword.value){
             foundUser = true;
             break;
           }
         }
         
-        if(foundUser){
-      sessionStorage.setItem("currentUser", users[i].id)
-        window.location.href = "feeds.html"
+        if(foundUser){         
+          sessionStorage.setItem("currentUser", users[index].id)
+          window.location.href = "feeds.html"
         
     } else {
         let emailExists = users.some(u => u.email == loginEmail.value);

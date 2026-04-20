@@ -103,7 +103,7 @@ window.addEventListener("load", () =>{
                 alt="Profile"
               />
               <h6 class="mb-0 fw-semibold profile-name">
-                <a href="#" class="text-decoration-none">${postOwner}</a>
+                <a href="profile.html" class="text-decoration-none">${postOwner}</a>
               </h6>
               <hr class="my-2" />
               <div class="text-start px-3">
@@ -138,7 +138,7 @@ newPostBtn.addEventListener("click", function() {
     time: postTime,
     likes: 0,
   }
-  // posts.push(newPost)
+  posts.push(newPost)
 
   console.log(posts);
   setUsersToLocalStorage("posts", posts)
