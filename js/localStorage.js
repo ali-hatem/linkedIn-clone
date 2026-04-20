@@ -82,7 +82,11 @@ let posts = [
 ];
 
 
+setUsersToLocalStorage('users', users)
+users = getUsersFromLocalStorage('users');
 
+setUsersToLocalStorage('posts', posts)
+posts = getUsersFromLocalStorage('posts');
 
 function getUsersFromLocalStorage(key) {
   let result = JSON.parse(localStorage.getItem(key));
