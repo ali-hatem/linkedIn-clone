@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn — Feed</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================
+       TOP NAVIGATION BAR
+       ===================== -->
+  <nav class="navbar">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="#" class="navbar__logo" aria-label="LinkedIn Home">
+        <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <title>LinkedIn</title>
+          <path d="M34 2.5v29A2.5 2.5 0 0 1 31.5 34h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5zM10 13H5v16h5V13zm.45-5.5A2.95 2.95 0 1 0 7.5 10.44 2.95 2.95 0 0 0 10.45 7.5zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58H17.7V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58c1.56 0 2.72 1 2.72 3.5V29H29z"/>
+        </svg>
+      </a>
+
+      <!-- Search Box -->
+      <div class="navbar__search">
+        <span class="navbar__search-icon">
+          <i class="bi bi-search"></i>
+        </span>
+        <input
+          type="search"
+          class="navbar__search-input"
+          placeholder="Search"
+          aria-label="Search LinkedIn"
+        />
+      </div>
+
+      <!-- Navigation Icons -->
+      <nav class="navbar__nav" aria-label="Primary navigation">
+
+        <!-- Home -->
+        <a href="#" class="navbar__nav-item navbar__nav-item--active" aria-label="Home" aria-current="page">
+          <i class="bi bi-house-fill navbar__nav-icon"></i>
+          <span class="navbar__nav-label">Home</span>
+        </a>
+
+        <!-- My Network -->
+        <a href="#" class="navbar__nav-item" aria-label="My Network">
+          <i class="bi bi-people-fill navbar__nav-icon"></i>
+          <span class="navbar__nav-label">My Network</span>
+          <span class="navbar__badge">3</span>
+        </a>
+
+        <!-- Jobs -->
+        <a href="#" class="navbar__nav-item" aria-label="Jobs">
+          <i class="bi bi-briefcase-fill navbar__nav-icon"></i>
+          <span class="navbar__nav-label">Jobs</span>
+        </a>
+
+        <!-- Messaging -->
+        <a href="#" class="navbar__nav-item" aria-label="Messaging">
+          <i class="bi bi-chat-fill navbar__nav-icon"></i>
+          <span class="navbar__nav-label">Messaging</span>
+          <span class="navbar__badge">7</span>
+        </a>
+
+        <!-- Notifications -->
+        <a href="#" class="navbar__nav-item" aria-label="Notifications">
+          <i class="bi bi-bell-fill navbar__nav-icon"></i>
+          <span class="navbar__nav-label">Notifications</span>
+          <span class="navbar__badge">12</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="navbar__nav-divider" aria-hidden="true"></div>
+
+        <!-- Profile -->
+        <a href="#" class="navbar__nav-item" aria-label="Profile">
+          <img
+            src="https://i.pravatar.cc/48?img=12"
+            alt="Alex Morgan"
+            class="navbar__nav-avatar"
+          />
+          <span class="navbar__nav-label">Me <i class="bi bi-chevron-down" style="font-size:9px;"></i></span>
+        </a>
+
+      </nav>
+    </div>
+  </nav>
+  <!-- / NAVBAR -->
+
+
+  <!-- =====================
+       MAIN LAYOUT
+       ===================== -->
+  <main class="layout" id="main-content">
+    <div class="row g-3 justify-content-center">
+
+
+      <!-- ===================
+           LEFT SIDEBAR
+           =================== -->
+      <div class="col-lg-3 sidebar-left">
+        <div class="sticky-col d-flex flex-column gap-2">
+
+          <!-- Profile Summary Card -->
+          <article class="card profile-card" aria-label="Your profile summary">
+
+            <!-- Banner image -->
+            <img
+              src="https://picsum.photos/seed/banner/300/56"
+              alt="Profile banner"
+              class="profile-card__banner"
+            />
+
+            <div class="profile-card__body">
+
+              <!-- Avatar -->
+              <div class="profile-card__avatar-wrap">
+                <img
+                  src="https://i.pravatar.cc/72?img=12"
+                  alt="Alex Morgan"
+                  class="profile-card__avatar"
+                />
+              </div>
+
+              <!-- Name & headline -->
+              <h2 class="profile-card__name">Alex Morgan</h2>
+              <p class="profile-card__headline">
+                Senior Product Designer · UX Lead at Nexus Corp
+              </p>
+
+              <hr class="profile-card__divider" />
+
+              <!-- Stats -->
+              <div class="profile-card__stats" aria-label="Profile statistics">
+                <div class="profile-card__stat">
+                  <span class="profile-card__stat-label">Profile viewers</span>
+                  <span class="profile-card__stat-value">284</span>
+                </div>
+                <div class="profile-card__stat">
+                  <span class="profile-card__stat-label">Post impressions</span>
+                  <span class="profile-card__stat-value">1,432</span>
+                </div>
+                <div class="profile-card__stat">
+                  <span class="profile-card__stat-label">Search appearances</span>
+                  <span class="profile-card__stat-value">57</span>
+                </div>
+              </div>
+
+              <hr class="profile-card__divider" />
+
+              <!-- Connections -->
+              <div class="profile-card__stat">
+                <span class="profile-card__stat-label">
+                  <i class="bi bi-people-fill me-1"></i>Connections
+                </span>
+                <span class="profile-card__stat-value">862</span>
+              </div>
+
+              <!-- Premium CTA -->
+              <div class="profile-card__premium" role="button" aria-label="Try LinkedIn Premium">
+                <span class="profile-card__premium-icon">✦</span>
+                <span>Try Premium for free</span>
+              </div>
+
+            </div>
+          </article>
+          <!-- / Profile Card -->
+
+          <!-- Shortcuts Card -->
+          <nav class="card" aria-label="Sidebar shortcuts">
+            <div class="shortcuts">
+              <p class="shortcuts__title">Recent</p>
+              <a href="#" class="shortcuts__item">
+                <i class="bi bi-hash shortcuts__item-icon"></i>
+                UX Design
+              </a>
+              <a href="#" class="shortcuts__item">
+                <i class="bi bi-hash shortcuts__item-icon"></i>
+                Product Management
+              </a>
+              <a href="#" class="shortcuts__item">
+                <i class="bi bi-hash shortcuts__item-icon"></i>
+                Frontend Development
+              </a>
+
+              <p class="shortcuts__title mt-3">Groups</p>
+              <a href="#" class="shortcuts__item">
+                <i class="bi bi-people shortcuts__item-icon"></i>
+                Figma Designers Community
+              </a>
+              <a href="#" class="shortcuts__item">
+                <i class="bi bi-people shortcuts__item-icon"></i>
+                Product Leaders Network
+              </a>
+
+              <p class="shortcuts__title mt-3">Events</p>
+              <a href="#" class="shortcuts__item">
+                <i class="bi bi-calendar-event shortcuts__item-icon"></i>
+                UX Summit 2025
+              </a>
+            </div>
+          </nav>
+          <!-- / Shortcuts Card -->
+
+        </div>
+      </div>
+      <!-- / LEFT SIDEBAR -->
+
+
+      <!-- ===================
+           MAIN FEED
+           =================== -->
+      <div class="col-lg-6 col-md-12 feed-col">
+        <div class="d-flex flex-column gap-3">
+
+
+          <!-- Post Composer -->
+          <section class="card composer" aria-label="Create a post">
+            <div class="composer__top">
+              <img
+                src="https://i.pravatar.cc/48?img=12"
+                alt="Your avatar"
+                class="composer__avatar"
+              />
+              <button class="composer__input" aria-label="Start a post">
+                Start a post
+              </button>
+            </div>
+            <div class="composer__actions">
+              <button class="composer__action-btn" aria-label="Add media">
+                <i class="bi bi-image composer__action-icon text-primary"></i>
+                <span>Media</span>
+              </button>
+              <button class="composer__action-btn" aria-label="Add event">
+                <i class="bi bi-calendar2-event composer__action-icon" style="color:#e06c75;"></i>
+                <span>Event</span>
+              </button>
+              <button class="composer__action-btn" aria-label="Write article">
+                <i class="bi bi-file-earmark-text composer__action-icon" style="color:#e9a23b;"></i>
+                <span>Write article</span>
+              </button>
+            </div>
+          </section>
+          <!-- / Post Composer -->
+
+
+          <!-- ---- Post 1 ---- -->
+          <article class="card post" aria-label="Post by Sarah Chen">
+            <div class="post__header">
+              <img
+                src="https://i.pravatar.cc/48?img=5"
+                alt="Sarah Chen"
+                class="post__avatar"
+              />
+              <div class="post__meta">
+                <span class="post__name">Sarah Chen</span>
+                <p class="post__headline">VP of Engineering · ex-Google · Building the future of AI</p>
+                <p class="post__time">
+                  <i class="bi bi-clock"></i> 2h ·
+                  <i class="bi bi-globe-americas"></i>
+                </p>
+              </div>
+              <button class="post__menu" aria-label="More options for this post">
+                <i class="bi bi-three-dots"></i>
+              </button>
+            </div>
+
+            <p class="post__content">
+              Excited to share that I just crossed <strong>10,000 followers</strong> on LinkedIn! 🎉<br /><br />
+              This community has been an incredible source of inspiration, learning, and opportunity. 
+              I'm grateful for every connection, conversation, and collaboration that has shaped my journey.<br /><br />
+              Here's to the next chapter — more insights on AI, engineering leadership, and building products at scale. 
+              What topics would you like me to cover next? Drop your suggestions below 👇
+            </p>
+
+            <img
+              src="https://picsum.photos/seed/post1/600/300"
+              alt="Milestone celebration post"
+              class="post__image"
+            />
+
+            <!-- Reaction count -->
+            <div class="post__reactions">
+              <div class="post__reactions-icons" aria-label="Reactions">
+                <span class="post__reaction-icon post__reaction-icon--like">👍</span>
+                <span class="post__reaction-icon post__reaction-icon--heart">❤️</span>
+                <span class="post__reaction-icon post__reaction-icon--clap">👏</span>
+              </div>
+              <span>3,241 reactions · 182 comments</span>
+            </div>
+
+            <hr class="post__actions-divider" />
+
+            <!-- Action buttons -->
+            <div class="post__actions">
+              <button class="post__action-btn" aria-label="Like this post">
+                <i class="bi bi-hand-thumbs-up post__action-icon"></i>
+                <span>Like</span>
+              </button>
+              <button class="post__action-btn" aria-label="Comment on this post">
+                <i class="bi bi-chat post__action-icon"></i>
+                <span>Comment</span>
+              </button>
+              <button class="post__action-btn" aria-label="Repost">
+                <i class="bi bi-repeat post__action-icon"></i>
+                <span>Repost</span>
+              </button>
+              <button class="post__action-btn" aria-label="Send this post">
+                <i class="bi bi-send post__action-icon"></i>
+                <span>Send</span>
+              </button>
+            </div>
+          </article>
+          <!-- / Post 1 -->
+
+
+          <!-- ---- Post 2 ---- -->
+          <article class="card post" aria-label="Post by Marcus Williams">
+            <div class="post__header">
+              <img
+                src="https://i.pravatar.cc/48?img=8"
+                alt="Marcus Williams"
+                class="post__avatar"
+              />
+              <div class="post__meta">
+                <span class="post__name">Marcus Williams</span>
+                <p class="post__headline">Senior Software Engineer · Open to opportunities</p>
+                <p class="post__time">
+                  <i class="bi bi-clock"></i> 5h ·
+                  <i class="bi bi-globe-americas"></i>
+                </p>
+              </div>
+              <button class="post__menu" aria-label="More options for this post">
+                <i class="bi bi-three-dots"></i>
+              </button>
+            </div>
+
+            <p class="post__content">
+              Hot take: <strong>most software is over-engineered</strong>.<br /><br />
+              After 12 years in the industry, I've seen teams spend months building 
+              "enterprise-grade" solutions for problems that could be solved in a weekend.<br /><br />
+              The best engineers I've worked with share one quality: they relentlessly ask 
+              <em>"do we really need this?"</em><br /><br />
+              Simplicity is not laziness. It's discipline. What's your take? 💭
+            </p>
+
+            <!-- Reaction count -->
+            <div class="post__reactions">
+              <div class="post__reactions-icons" aria-label="Reactions">
+                <span class="post__reaction-icon post__reaction-icon--like">👍</span>
+                <span class="post__reaction-icon post__reaction-icon--clap">👏</span>
+              </div>
+              <span>1,847 reactions · 94 comments</span>
+            </div>
+
+            <hr class="post__actions-divider" />
+
+            <div class="post__actions">
+              <button class="post__action-btn post__action-btn--active" aria-label="Unlike this post" aria-pressed="true">
+                <i class="bi bi-hand-thumbs-up-fill post__action-icon"></i>
+                <span>Like</span>
+              </button>
+              <button class="post__action-btn" aria-label="Comment on this post">
+                <i class="bi bi-chat post__action-icon"></i>
+                <span>Comment</span>
+              </button>
+              <button class="post__action-btn" aria-label="Repost">
+                <i class="bi bi-repeat post__action-icon"></i>
+                <span>Repost</span>
+              </button>
+              <button class="post__action-btn" aria-label="Send this post">
+                <i class="bi bi-send post__action-icon"></i>
+                <span>Send</span>
+              </button>
+            </div>
+          </article>
+          <!-- / Post 2 -->
+
+
+          <!-- ---- Post 3 (with image) ---- -->
+          <article class="card post" aria-label="Post by Priya Kapoor">
+            <div class="post__header">
+              <img
+                src="https://i.pravatar.cc/48?img=25"
+                alt="Priya Kapoor"
+                class="post__avatar"
+              />
+              <div class="post__meta">
+                <span class="post__name">Priya Kapoor</span>
+                <p class="post__headline">Product Manager · Figma · Speaker · Design Advocate</p>
+                <p class="post__time">
+                  <i class="bi bi-clock"></i> 1d ·
+                  <i class="bi bi-globe-americas"></i>
+                </p>
+              </div>
+              <button class="post__menu" aria-label="More options for this post">
+                <i class="bi bi-three-dots"></i>
+              </button>
+            </div>
+
+            <p class="post__content">
+              Just wrapped up my talk at <strong>UX Summit 2025</strong> and the energy in that room was unreal. 🚀<br /><br />
+              We explored how design systems are evolving from static component libraries into 
+              living, breathing ecosystems powered by AI. The future of design tooling is collaborative, 
+              contextual, and radically human-centred.<br /><br />
+              Slides will be published shortly. Thank you to everyone who attended!
+            </p>
+
+            <img
+              src="https://picsum.photos/seed/post3/600/300"
+              alt="Priya speaking at UX Summit 2025"
+              class="post__image"
+            />
+
+            <!-- Reaction count -->
+            <div class="post__reactions">
+              <div class="post__reactions-icons" aria-label="Reactions">
+                <span class="post__reaction-icon post__reaction-icon--like">👍</span>
+                <span class="post__reaction-icon post__reaction-icon--heart">❤️</span>
+                <span class="post__reaction-icon post__reaction-icon--clap">👏</span>
+              </div>
+              <span>2,103 reactions · 67 comments</span>
+            </div>
+
+            <hr class="post__actions-divider" />
+
+            <div class="post__actions">
+              <button class="post__action-btn" aria-label="Like this post">
+                <i class="bi bi-hand-thumbs-up post__action-icon"></i>
+                <span>Like</span>
+              </button>
+              <button class="post__action-btn" aria-label="Comment on this post">
+                <i class="bi bi-chat post__action-icon"></i>
+                <span>Comment</span>
+              </button>
+              <button class="post__action-btn" aria-label="Repost">
+                <i class="bi bi-repeat post__action-icon"></i>
+                <span>Repost</span>
+              </button>
+              <button class="post__action-btn" aria-label="Send this post">
+                <i class="bi bi-send post__action-icon"></i>
+                <span>Send</span>
+              </button>
+            </div>
+          </article>
+          <!-- / Post 3 -->
+
+
+          <!-- Load more -->
+          <div class="text-center py-2">
+            <button class="btn-primary" aria-label="Load more posts">
+              <i class="bi bi-arrow-clockwise"></i>
+              Load more posts
+            </button>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- / MAIN FEED -->
+
+
+      <!-- ===================
+           RIGHT SIDEBAR
+           =================== -->
+      <div class="col-lg-3 sidebar-right">
+        <div class="sticky-col d-flex flex-column gap-2">
+
+
+          <!-- People You May Know -->
+          <section class="card" aria-labelledby="suggestions-heading">
+            <div class="suggestions__header">
+              <h2 class="suggestions__title" id="suggestions-heading">People you may know</h2>
+            </div>
+
+            <!-- Suggestion 1 -->
+            <div class="suggestion">
+              <img
+                src="https://i.pravatar.cc/48?img=32"
+                alt="James Lee"
+                class="suggestion__avatar"
+              />
+              <div class="suggestion__info">
+                <span class="suggestion__name">James Lee</span>
+                <p class="suggestion__mutual">
+                  <i class="bi bi-people-fill"></i>
+                  12 mutual connections
+                </p>
+                <p class="suggestion__mutual">
+                  <i class="bi bi-briefcase-fill"></i>
+                  CTO at Streamline AI
+                </p>
+                <button class="suggestion__connect-btn" aria-label="Connect with James Lee">
+                  <i class="bi bi-plus-lg"></i> Connect
+                </button>
+              </div>
+            </div>
+
+            <!-- Suggestion 2 -->
+            <div class="suggestion">
+              <img
+                src="https://i.pravatar.cc/48?img=44"
+                alt="Natalie Park"
+                class="suggestion__avatar"
+              />
+              <div class="suggestion__info">
+                <span class="suggestion__name">Natalie Park</span>
+                <p class="suggestion__mutual">
+                  <i class="bi bi-people-fill"></i>
+                  8 mutual connections
+                </p>
+                <p class="suggestion__mutual">
+                  <i class="bi bi-briefcase-fill"></i>
+                  Head of Design · Vercel
+                </p>
+                <button class="suggestion__connect-btn" aria-label="Connect with Natalie Park">
+                  <i class="bi bi-plus-lg"></i> Connect
+                </button>
+              </div>
+            </div>
+
+            <!-- Suggestion 3 -->
+            <div class="suggestion">
+              <img
+                src="https://i.pravatar.cc/48?img=60"
+                alt="Omar Hassan"
+                class="suggestion__avatar"
+              />
+              <div class="suggestion__info">
+                <span class="suggestion__name">Omar Hassan</span>
+                <p class="suggestion__mutual">
+                  <i class="bi bi-people-fill"></i>
+                  5 mutual connections
+                </p>
+                <p class="suggestion__mutual">
+                  <i class="bi bi-briefcase-fill"></i>
+                  Staff Engineer · Shopify
+                </p>
+                <button class="suggestion__connect-btn" aria-label="Connect with Omar Hassan">
+                  <i class="bi bi-plus-lg"></i> Connect
+                </button>
+              </div>
+            </div>
+
+            <div class="px-3 pb-3">
+              <a href="#" class="suggestions__see-all">View all recommendations →</a>
+            </div>
+          </section>
+          <!-- / People You May Know -->
+
+
+          <!-- Trending Topics -->
+          <section class="card" aria-labelledby="trending-heading">
+            <div class="trending">
+              <h2 class="trending__header" id="trending-heading">
+                <i class="bi bi-graph-up-arrow me-1 text-blue"></i>
+                Trending topics
+              </h2>
+
+              <div class="trending__item" role="button" tabindex="0">
+                <span class="trending__number">1</span>
+                <div class="trending__content">
+                  <p class="trending__topic">#AIInProductDesign</p>
+                  <p class="trending__posts">4,200+ posts this week</p>
+                </div>
+              </div>
+
+              <div class="trending__item" role="button" tabindex="0">
+                <span class="trending__number">2</span>
+                <div class="trending__content">
+                  <p class="trending__topic">#FutureOfWork</p>
+                  <p class="trending__posts">3,850+ posts this week</p>
+                </div>
+              </div>
+
+              <div class="trending__item" role="button" tabindex="0">
+                <span class="trending__number">3</span>
+                <div class="trending__content">
+                  <p class="trending__topic">#CareerGrowth</p>
+                  <p class="trending__posts">2,940+ posts this week</p>
+                </div>
+              </div>
+
+              <div class="trending__item" role="button" tabindex="0">
+                <span class="trending__number">4</span>
+                <div class="trending__content">
+                  <p class="trending__topic">#LeadershipTips</p>
+                  <p class="trending__posts">2,110+ posts this week</p>
+                </div>
+              </div>
+
+              <div class="trending__item" role="button" tabindex="0">
+                <span class="trending__number">5</span>
+                <div class="trending__content">
+                  <p class="trending__topic">#OpenToWork</p>
+                  <p class="trending__posts">1,780+ posts this week</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- / Trending Topics -->
+
+
+          <!-- Footer links -->
+          <footer class="card sidebar-footer" aria-label="Footer links">
+            <a href="#" class="sidebar-footer__link">About</a>
+            <a href="#" class="sidebar-footer__link">Accessibility</a>
+            <a href="#" class="sidebar-footer__link">Help Center</a>
+            <a href="#" class="sidebar-footer__link">Privacy &amp; Terms</a>
+            <a href="#" class="sidebar-footer__link">Ad Choices</a>
+            <a href="#" class="sidebar-footer__link">Advertising</a>
+            <a href="#" class="sidebar-footer__link">Business Services</a>
+            <a href="#" class="sidebar-footer__link">More</a>
+            <p class="sidebar-footer__copy">LinkedIn © 2025</p>
+          </footer>
+          <!-- / Footer -->
+
+
+        </div>
+      </div>
+      <!-- / RIGHT SIDEBAR -->
+
+
+    </div>
+  </main>
+  <!-- / MAIN LAYOUT -->
+
+
+  <!-- Bootstrap 5 JS Bundle (Popper + Bootstrap) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+</body>
+</html>
