@@ -102,11 +102,11 @@ let signupCard = document.getElementById("signup-card")
 //   throw new Error("scripte.js: not on auth page, aborting.");
 // }
 
-// // setUsersToLocalStorage('users', users)
-// users = getUsersFromLocalStorage('users');
+setUsersToLocalStorage('users', users)
+users = getUsersFromLocalStorage('users');
 
-// // setUsersToLocalStorage('posts', posts)
-// posts = getUsersFromLocalStorage('posts');
+setUsersToLocalStorage('posts', posts)
+posts = getUsersFromLocalStorage('posts');
 
 // function getUsersFromLocalStorage(key) {
 //   let result = JSON.parse(localStorage.getItem(key));
