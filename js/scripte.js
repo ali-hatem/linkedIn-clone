@@ -122,12 +122,10 @@ function userAllDataFromAllForms(){
     let form2 = getForm2DataFromSessionStorage();
     let form3 = getForm3DataFromSessionStorage();
     let userId = Math.floor(Math.random()*1000)
-    let userFullData = {id: userId, ...form1, ...form2, ...form3,skills:[], posts:[],connections:[]  };
+    let userFullData = {id: userId, ...form1, ...form2, ...form3,skills:[], posts:[],connections:[]};
     setUserFullData(userFullData);
-    console.log("users 1", users);
     
     users.push(userFullData);
-    console.log("users 2", users);
     setUsersToLocalStorage('users', users);
     sessionStorage.setItem("currentUser", userFullData.id)
 }
