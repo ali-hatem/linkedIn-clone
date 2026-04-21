@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinkedIn — Feed</title>
+  <title>LinkedIn Profile</title>
 
-  <!-- Bootstrap 5 CSS -->
+  <!-- Bootstrap 5 CDN -->
   <link
-    rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
   />
 
   <!-- Bootstrap Icons -->
   <link
-    rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
   />
 
   <!-- Custom Stylesheet -->
@@ -22,630 +22,615 @@
 </head>
 <body>
 
-  <!-- =====================
-       TOP NAVIGATION BAR
-       ===================== -->
-  <nav class="navbar">
-    <div class="navbar__inner">
-
+  <!-- ============================================================
+       TOP NAVIGATION BAR (LinkedIn-style)
+  ============================================================ -->
+  <nav class="li-navbar">
+    <div class="li-navbar__inner">
       <!-- Logo -->
-      <a href="#" class="navbar__logo" aria-label="LinkedIn Home">
-        <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <title>LinkedIn</title>
-          <path d="M34 2.5v29A2.5 2.5 0 0 1 31.5 34h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5zM10 13H5v16h5V13zm.45-5.5A2.95 2.95 0 1 0 7.5 10.44 2.95 2.95 0 0 0 10.45 7.5zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58H17.7V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58c1.56 0 2.72 1 2.72 3.5V29H29z"/>
-        </svg>
+      <a href="#" class="li-navbar__logo" aria-label="LinkedIn Home">
+        <i class="bi bi-linkedin"></i>
       </a>
 
-      <!-- Search Box -->
-      <div class="navbar__search">
-        <span class="navbar__search-icon">
-          <i class="bi bi-search"></i>
-        </span>
-        <input
-          type="search"
-          class="navbar__search-input"
-          placeholder="Search"
-          aria-label="Search LinkedIn"
-        />
+      <!-- Search -->
+      <div class="li-navbar__search">
+        <i class="bi bi-search li-navbar__search-icon"></i>
+        <input type="text" placeholder="Search" class="li-navbar__search-input" />
       </div>
 
-      <!-- Navigation Icons -->
-      <nav class="navbar__nav" aria-label="Primary navigation">
-
-        <!-- Home -->
-        <a href="#" class="navbar__nav-item navbar__nav-item--active" aria-label="Home" aria-current="page">
-          <i class="bi bi-house-fill navbar__nav-icon"></i>
-          <span class="navbar__nav-label">Home</span>
-        </a>
-
-        <!-- My Network -->
-        <a href="#" class="navbar__nav-item" aria-label="My Network">
-          <i class="bi bi-people-fill navbar__nav-icon"></i>
-          <span class="navbar__nav-label">My Network</span>
-          <span class="navbar__badge">3</span>
-        </a>
-
-        <!-- Jobs -->
-        <a href="#" class="navbar__nav-item" aria-label="Jobs">
-          <i class="bi bi-briefcase-fill navbar__nav-icon"></i>
-          <span class="navbar__nav-label">Jobs</span>
-        </a>
-
-        <!-- Messaging -->
-        <a href="#" class="navbar__nav-item" aria-label="Messaging">
-          <i class="bi bi-chat-fill navbar__nav-icon"></i>
-          <span class="navbar__nav-label">Messaging</span>
-          <span class="navbar__badge">7</span>
-        </a>
-
-        <!-- Notifications -->
-        <a href="#" class="navbar__nav-item" aria-label="Notifications">
-          <i class="bi bi-bell-fill navbar__nav-icon"></i>
-          <span class="navbar__nav-label">Notifications</span>
-          <span class="navbar__badge">12</span>
-        </a>
-
-        <!-- Divider -->
-        <div class="navbar__nav-divider" aria-hidden="true"></div>
-
-        <!-- Profile -->
-        <a href="#" class="navbar__nav-item" aria-label="Profile">
-          <img
-            src="https://i.pravatar.cc/48?img=12"
-            alt="Alex Morgan"
-            class="navbar__nav-avatar"
-          />
-          <span class="navbar__nav-label">Me <i class="bi bi-chevron-down" style="font-size:9px;"></i></span>
-        </a>
-
-      </nav>
+      <!-- Nav Icons -->
+      <ul class="li-navbar__icons">
+        <li class="li-navbar__icon-item">
+          <a href="#" class="li-navbar__icon-link">
+            <i class="bi bi-house-door-fill"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="li-navbar__icon-item">
+          <a href="#" class="li-navbar__icon-link">
+            <i class="bi bi-people-fill"></i>
+            <span>Network</span>
+          </a>
+        </li>
+        <li class="li-navbar__icon-item">
+          <a href="#" class="li-navbar__icon-link">
+            <i class="bi bi-briefcase-fill"></i>
+            <span>Jobs</span>
+          </a>
+        </li>
+        <li class="li-navbar__icon-item">
+          <a href="#" class="li-navbar__icon-link">
+            <i class="bi bi-chat-dots-fill"></i>
+            <span>Messaging</span>
+          </a>
+        </li>
+        <li class="li-navbar__icon-item">
+          <a href="#" class="li-navbar__icon-link">
+            <i class="bi bi-bell-fill"></i>
+            <span>Notifications</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
-  <!-- / NAVBAR -->
+  <!-- /TOP NAVIGATION BAR -->
 
 
-  <!-- =====================
-       MAIN LAYOUT
-       ===================== -->
-  <main class="layout" id="main-content">
-    <div class="row g-3 justify-content-center">
+  <!-- ============================================================
+       PAGE WRAPPER
+  ============================================================ -->
+  <div class="li-page-wrapper">
+    <div class="container li-container">
+      <div class="row g-3">
 
+        <!-- ============================================================
+             MAIN COLUMN (left / center)
+        ============================================================ -->
+        <div class="col-12 col-lg-8">
 
-      <!-- ===================
-           LEFT SIDEBAR
-           =================== -->
-      <div class="col-lg-3 sidebar-left">
-        <div class="sticky-col d-flex flex-column gap-2">
+          <!-- --------------------------------------------------------
+               1. PROFILE HEADER CARD
+          -------------------------------------------------------- -->
+          <section class="li-card li-profile-header" aria-label="Profile header">
 
-          <!-- Profile Summary Card -->
-          <article class="card profile-card" aria-label="Your profile summary">
+            <!-- Cover / Banner -->
+            <div class="li-cover">
+              <img
+                src="https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?w=900&auto=format&fit=crop&q=60"
+                alt="Cover photo – abstract blue gradient"
+                class="li-cover__img"
+              />
+            </div>
 
-            <!-- Banner image -->
-            <img
-              src="https://picsum.photos/seed/banner/300/56"
-              alt="Profile banner"
-              class="profile-card__banner"
-            />
+            <!-- Avatar overlapping the cover -->
+            <div class="li-avatar-wrap">
+              <img
+                src="assets/images/user-image.png"
+                alt="Alex Morgan profile picture"
+                class="li-avatar"
+              />
+              <!-- Open-to-work ring indicator -->
+              <span class="li-avatar-badge" title="Open to work"></span>
+            </div>
 
-            <div class="profile-card__body">
+            <!-- Action buttons (top-right) -->
+            <div class="li-profile-actions">
+              <button class="li-btn li-btn--ghost li-btn--sm" aria-label="More options">
+                <i class="bi bi-three-dots"></i>
+              </button>
+            </div>
 
-              <!-- Avatar -->
-              <div class="profile-card__avatar-wrap">
-                <img
-                  src="https://i.pravatar.cc/72?img=12"
-                  alt="Alex Morgan"
-                  class="profile-card__avatar"
-                />
-              </div>
-
-              <!-- Name & headline -->
-              <h2 class="profile-card__name">Alex Morgan</h2>
-              <p class="profile-card__headline">
-                Senior Product Designer · UX Lead at Nexus Corp
+            <!-- Profile meta -->
+             <div id="profileHead">
+            <div class="li-profile-meta">
+              <h1 class="li-profile-meta__name">Alex Morgan</h1>
+              <p class="li-profile-meta__headline">
+                Senior Product Designer · UX Researcher · Design Systems Lead
               </p>
 
-              <hr class="profile-card__divider" />
-
-              <!-- Stats -->
-              <div class="profile-card__stats" aria-label="Profile statistics">
-                <div class="profile-card__stat">
-                  <span class="profile-card__stat-label">Profile viewers</span>
-                  <span class="profile-card__stat-value">284</span>
-                </div>
-                <div class="profile-card__stat">
-                  <span class="profile-card__stat-label">Post impressions</span>
-                  <span class="profile-card__stat-value">1,432</span>
-                </div>
-                <div class="profile-card__stat">
-                  <span class="profile-card__stat-label">Search appearances</span>
-                  <span class="profile-card__stat-value">57</span>
-                </div>
-              </div>
-
-              <hr class="profile-card__divider" />
-
-              <!-- Connections -->
-              <div class="profile-card__stat">
-                <span class="profile-card__stat-label">
-                  <i class="bi bi-people-fill me-1"></i>Connections
+              <!-- Location + connections -->
+              <div class="li-profile-meta__details">
+                <span class="li-profile-meta__location">
+                  <i class="bi bi-geo-alt-fill"></i> San Francisco, California, United States
                 </span>
-                <span class="profile-card__stat-value">862</span>
+                <a href="#" class="li-profile-meta__connections">
+                  <i class="bi bi-people-fill"></i> 2,847 connections
+                </a>
               </div>
 
-              <!-- Premium CTA -->
-              <div class="profile-card__premium" role="button" aria-label="Try LinkedIn Premium">
-                <span class="profile-card__premium-icon">✦</span>
-                <span>Try Premium for free</span>
-              </div>
-
-            </div>
-          </article>
-          <!-- / Profile Card -->
-
-          <!-- Shortcuts Card -->
-          <nav class="card" aria-label="Sidebar shortcuts">
-            <div class="shortcuts">
-              <p class="shortcuts__title">Recent</p>
-              <a href="#" class="shortcuts__item">
-                <i class="bi bi-hash shortcuts__item-icon"></i>
-                UX Design
-              </a>
-              <a href="#" class="shortcuts__item">
-                <i class="bi bi-hash shortcuts__item-icon"></i>
-                Product Management
-              </a>
-              <a href="#" class="shortcuts__item">
-                <i class="bi bi-hash shortcuts__item-icon"></i>
-                Frontend Development
-              </a>
-
-              <p class="shortcuts__title mt-3">Groups</p>
-              <a href="#" class="shortcuts__item">
-                <i class="bi bi-people shortcuts__item-icon"></i>
-                Figma Designers Community
-              </a>
-              <a href="#" class="shortcuts__item">
-                <i class="bi bi-people shortcuts__item-icon"></i>
-                Product Leaders Network
-              </a>
-
-              <p class="shortcuts__title mt-3">Events</p>
-              <a href="#" class="shortcuts__item">
-                <i class="bi bi-calendar-event shortcuts__item-icon"></i>
-                UX Summit 2025
-              </a>
-            </div>
-          </nav>
-          <!-- / Shortcuts Card -->
-
-        </div>
-      </div>
-      <!-- / LEFT SIDEBAR -->
-
-
-      <!-- ===================
-           MAIN FEED
-           =================== -->
-      <div class="col-lg-6 col-md-12 feed-col">
-        <div class="d-flex flex-column gap-3">
-
-
-          <!-- Post Composer -->
-          <section class="card composer" aria-label="Create a post">
-            <div class="composer__top">
-              <img
-                src="https://i.pravatar.cc/48?img=12"
-                alt="Your avatar"
-                class="composer__avatar"
-              />
-              <button class="composer__input" aria-label="Start a post">
-                Start a post
-              </button>
-            </div>
-            <div class="composer__actions">
-              <button class="composer__action-btn" aria-label="Add media">
-                <i class="bi bi-image composer__action-icon text-primary"></i>
-                <span>Media</span>
-              </button>
-              <button class="composer__action-btn" aria-label="Add event">
-                <i class="bi bi-calendar2-event composer__action-icon" style="color:#e06c75;"></i>
-                <span>Event</span>
-              </button>
-              <button class="composer__action-btn" aria-label="Write article">
-                <i class="bi bi-file-earmark-text composer__action-icon" style="color:#e9a23b;"></i>
-                <span>Write article</span>
-              </button>
-            </div>
-          </section>
-          <!-- / Post Composer -->
-
-
-          <!-- ---- Post 1 ---- -->
-          <article class="card post" aria-label="Post by Sarah Chen">
-            <div class="post__header">
-              <img
-                src="https://i.pravatar.cc/48?img=5"
-                alt="Sarah Chen"
-                class="post__avatar"
-              />
-              <div class="post__meta">
-                <span class="post__name">Sarah Chen</span>
-                <p class="post__headline">VP of Engineering · ex-Google · Building the future of AI</p>
-                <p class="post__time">
-                  <i class="bi bi-clock"></i> 2h ·
-                  <i class="bi bi-globe-americas"></i>
-                </p>
-              </div>
-              <button class="post__menu" aria-label="More options for this post">
-                <i class="bi bi-three-dots"></i>
-              </button>
-            </div>
-
-            <p class="post__content">
-              Excited to share that I just crossed <strong>10,000 followers</strong> on LinkedIn! 🎉<br /><br />
-              This community has been an incredible source of inspiration, learning, and opportunity. 
-              I'm grateful for every connection, conversation, and collaboration that has shaped my journey.<br /><br />
-              Here's to the next chapter — more insights on AI, engineering leadership, and building products at scale. 
-              What topics would you like me to cover next? Drop your suggestions below 👇
-            </p>
-
-            <img
-              src="https://picsum.photos/seed/post1/600/300"
-              alt="Milestone celebration post"
-              class="post__image"
-            />
-
-            <!-- Reaction count -->
-            <div class="post__reactions">
-              <div class="post__reactions-icons" aria-label="Reactions">
-                <span class="post__reaction-icon post__reaction-icon--like">👍</span>
-                <span class="post__reaction-icon post__reaction-icon--heart">❤️</span>
-                <span class="post__reaction-icon post__reaction-icon--clap">👏</span>
-              </div>
-              <span>3,241 reactions · 182 comments</span>
-            </div>
-
-            <hr class="post__actions-divider" />
-
-            <!-- Action buttons -->
-            <div class="post__actions">
-              <button class="post__action-btn" aria-label="Like this post">
-                <i class="bi bi-hand-thumbs-up post__action-icon"></i>
-                <span>Like</span>
-              </button>
-              <button class="post__action-btn" aria-label="Comment on this post">
-                <i class="bi bi-chat post__action-icon"></i>
-                <span>Comment</span>
-              </button>
-              <button class="post__action-btn" aria-label="Repost">
-                <i class="bi bi-repeat post__action-icon"></i>
-                <span>Repost</span>
-              </button>
-              <button class="post__action-btn" aria-label="Send this post">
-                <i class="bi bi-send post__action-icon"></i>
-                <span>Send</span>
-              </button>
-            </div>
-          </article>
-          <!-- / Post 1 -->
-
-
-          <!-- ---- Post 2 ---- -->
-          <article class="card post" aria-label="Post by Marcus Williams">
-            <div class="post__header">
-              <img
-                src="https://i.pravatar.cc/48?img=8"
-                alt="Marcus Williams"
-                class="post__avatar"
-              />
-              <div class="post__meta">
-                <span class="post__name">Marcus Williams</span>
-                <p class="post__headline">Senior Software Engineer · Open to opportunities</p>
-                <p class="post__time">
-                  <i class="bi bi-clock"></i> 5h ·
-                  <i class="bi bi-globe-americas"></i>
-                </p>
-              </div>
-              <button class="post__menu" aria-label="More options for this post">
-                <i class="bi bi-three-dots"></i>
-              </button>
-            </div>
-
-            <p class="post__content">
-              Hot take: <strong>most software is over-engineered</strong>.<br /><br />
-              After 12 years in the industry, I've seen teams spend months building 
-              "enterprise-grade" solutions for problems that could be solved in a weekend.<br /><br />
-              The best engineers I've worked with share one quality: they relentlessly ask 
-              <em>"do we really need this?"</em><br /><br />
-              Simplicity is not laziness. It's discipline. What's your take? 💭
-            </p>
-
-            <!-- Reaction count -->
-            <div class="post__reactions">
-              <div class="post__reactions-icons" aria-label="Reactions">
-                <span class="post__reaction-icon post__reaction-icon--like">👍</span>
-                <span class="post__reaction-icon post__reaction-icon--clap">👏</span>
-              </div>
-              <span>1,847 reactions · 94 comments</span>
-            </div>
-
-            <hr class="post__actions-divider" />
-
-            <div class="post__actions">
-              <button class="post__action-btn post__action-btn--active" aria-label="Unlike this post" aria-pressed="true">
-                <i class="bi bi-hand-thumbs-up-fill post__action-icon"></i>
-                <span>Like</span>
-              </button>
-              <button class="post__action-btn" aria-label="Comment on this post">
-                <i class="bi bi-chat post__action-icon"></i>
-                <span>Comment</span>
-              </button>
-              <button class="post__action-btn" aria-label="Repost">
-                <i class="bi bi-repeat post__action-icon"></i>
-                <span>Repost</span>
-              </button>
-              <button class="post__action-btn" aria-label="Send this post">
-                <i class="bi bi-send post__action-icon"></i>
-                <span>Send</span>
-              </button>
-            </div>
-          </article>
-          <!-- / Post 2 -->
-
-
-          <!-- ---- Post 3 (with image) ---- -->
-          <article class="card post" aria-label="Post by Priya Kapoor">
-            <div class="post__header">
-              <img
-                src="https://i.pravatar.cc/48?img=25"
-                alt="Priya Kapoor"
-                class="post__avatar"
-              />
-              <div class="post__meta">
-                <span class="post__name">Priya Kapoor</span>
-                <p class="post__headline">Product Manager · Figma · Speaker · Design Advocate</p>
-                <p class="post__time">
-                  <i class="bi bi-clock"></i> 1d ·
-                  <i class="bi bi-globe-americas"></i>
-                </p>
-              </div>
-              <button class="post__menu" aria-label="More options for this post">
-                <i class="bi bi-three-dots"></i>
-              </button>
-            </div>
-
-            <p class="post__content">
-              Just wrapped up my talk at <strong>UX Summit 2025</strong> and the energy in that room was unreal. 🚀<br /><br />
-              We explored how design systems are evolving from static component libraries into 
-              living, breathing ecosystems powered by AI. The future of design tooling is collaborative, 
-              contextual, and radically human-centred.<br /><br />
-              Slides will be published shortly. Thank you to everyone who attended!
-            </p>
-
-            <img
-              src="https://picsum.photos/seed/post3/600/300"
-              alt="Priya speaking at UX Summit 2025"
-              class="post__image"
-            />
-
-            <!-- Reaction count -->
-            <div class="post__reactions">
-              <div class="post__reactions-icons" aria-label="Reactions">
-                <span class="post__reaction-icon post__reaction-icon--like">👍</span>
-                <span class="post__reaction-icon post__reaction-icon--heart">❤️</span>
-                <span class="post__reaction-icon post__reaction-icon--clap">👏</span>
-              </div>
-              <span>2,103 reactions · 67 comments</span>
-            </div>
-
-            <hr class="post__actions-divider" />
-
-            <div class="post__actions">
-              <button class="post__action-btn" aria-label="Like this post">
-                <i class="bi bi-hand-thumbs-up post__action-icon"></i>
-                <span>Like</span>
-              </button>
-              <button class="post__action-btn" aria-label="Comment on this post">
-                <i class="bi bi-chat post__action-icon"></i>
-                <span>Comment</span>
-              </button>
-              <button class="post__action-btn" aria-label="Repost">
-                <i class="bi bi-repeat post__action-icon"></i>
-                <span>Repost</span>
-              </button>
-              <button class="post__action-btn" aria-label="Send this post">
-                <i class="bi bi-send post__action-icon"></i>
-                <span>Send</span>
-              </button>
-            </div>
-          </article>
-          <!-- / Post 3 -->
-
-
-          <!-- Load more -->
-          <div class="text-center py-2">
-            <button class="btn-primary" aria-label="Load more posts">
-              <i class="bi bi-arrow-clockwise"></i>
-              Load more posts
-            </button>
-          </div>
-
-
-        </div>
-      </div>
-      <!-- / MAIN FEED -->
-
-
-      <!-- ===================
-           RIGHT SIDEBAR
-           =================== -->
-      <div class="col-lg-3 sidebar-right">
-        <div class="sticky-col d-flex flex-column gap-2">
-
-
-          <!-- People You May Know -->
-          <section class="card" aria-labelledby="suggestions-heading">
-            <div class="suggestions__header">
-              <h2 class="suggestions__title" id="suggestions-heading">People you may know</h2>
-            </div>
-
-            <!-- Suggestion 1 -->
-            <div class="suggestion">
-              <img
-                src="https://i.pravatar.cc/48?img=32"
-                alt="James Lee"
-                class="suggestion__avatar"
-              />
-              <div class="suggestion__info">
-                <span class="suggestion__name">James Lee</span>
-                <p class="suggestion__mutual">
-                  <i class="bi bi-people-fill"></i>
-                  12 mutual connections
-                </p>
-                <p class="suggestion__mutual">
-                  <i class="bi bi-briefcase-fill"></i>
-                  CTO at Streamline AI
-                </p>
-                <button class="suggestion__connect-btn" aria-label="Connect with James Lee">
-                  <i class="bi bi-plus-lg"></i> Connect
+              <!-- CTA Buttons -->
+              <div class="li-profile-meta__cta">
+                <button class="li-btn li-btn--primary">
+                  <i class="bi bi-person-plus-fill"></i> Connect
+                </button>
+                <button class="li-btn li-btn--secondary">
+                  <i class="bi bi-chat-dots-fill"></i> Message
+                </button>
+                <button class="li-btn li-btn--ghost">
+                  <i class="bi bi-hand-thumbs-up-fill"></i> Follow
+                </button>
+                <button class="li-btn li-btn--ghost li-btn--icon-only" aria-label="More options">
+                  <i class="bi bi-three-dots"></i>
                 </button>
               </div>
             </div>
-
-            <!-- Suggestion 2 -->
-            <div class="suggestion">
-              <img
-                src="https://i.pravatar.cc/48?img=44"
-                alt="Natalie Park"
-                class="suggestion__avatar"
-              />
-              <div class="suggestion__info">
-                <span class="suggestion__name">Natalie Park</span>
-                <p class="suggestion__mutual">
-                  <i class="bi bi-people-fill"></i>
-                  8 mutual connections
-                </p>
-                <p class="suggestion__mutual">
-                  <i class="bi bi-briefcase-fill"></i>
-                  Head of Design · Vercel
-                </p>
-                <button class="suggestion__connect-btn" aria-label="Connect with Natalie Park">
-                  <i class="bi bi-plus-lg"></i> Connect
-                </button>
-              </div>
             </div>
 
-            <!-- Suggestion 3 -->
-            <div class="suggestion">
-              <img
-                src="https://i.pravatar.cc/48?img=60"
-                alt="Omar Hassan"
-                class="suggestion__avatar"
-              />
-              <div class="suggestion__info">
-                <span class="suggestion__name">Omar Hassan</span>
-                <p class="suggestion__mutual">
-                  <i class="bi bi-people-fill"></i>
-                  5 mutual connections
-                </p>
-                <p class="suggestion__mutual">
-                  <i class="bi bi-briefcase-fill"></i>
-                  Staff Engineer · Shopify
-                </p>
-                <button class="suggestion__connect-btn" aria-label="Connect with Omar Hassan">
-                  <i class="bi bi-plus-lg"></i> Connect
-                </button>
-              </div>
-            </div>
+          </section>
+          <!-- /PROFILE HEADER CARD -->
 
-            <div class="px-3 pb-3">
-              <a href="#" class="suggestions__see-all">View all recommendations →</a>
+
+          <!-- --------------------------------------------------------
+               2. ABOUT SECTION
+          -------------------------------------------------------- -->
+          <section class="li-card li-section" aria-labelledby="about-heading">
+            <h2 class="li-section__title" id="about-heading">About</h2>
+            <div class="li-section__body li-about-text">
+              <p>
+                I'm a Senior Product Designer with over 9 years of experience crafting
+                human-centered digital products at the intersection of design systems,
+                UX research, and product strategy.
+              </p>
+              <p>
+                Currently leading design at <strong>Horizon Labs</strong>, where I own the
+                end-to-end design process — from discovery workshops and user interviews
+                through to high-fidelity prototypes and developer handoff. I'm passionate
+                about building scalable, accessible design systems that empower teams to
+                ship beautiful products faster.
+              </p>
+              <p>
+                Outside of work I mentor junior designers through ADPList, contribute to the
+                open-source Figma community, and speak at local UX meetups.
+              </p>
             </div>
           </section>
-          <!-- / People You May Know -->
+          <!-- /ABOUT SECTION -->
 
 
-          <!-- Trending Topics -->
-          <section class="card" aria-labelledby="trending-heading">
-            <div class="trending">
-              <h2 class="trending__header" id="trending-heading">
-                <i class="bi bi-graph-up-arrow me-1 text-blue"></i>
-                Trending topics
-              </h2>
+          <!-- --------------------------------------------------------
+               3. EXPERIENCE SECTION
+          -------------------------------------------------------- -->
+          <section class="li-card li-section" aria-labelledby="experience-heading">
+            <h2 class="li-section__title" id="experience-heading">Experience</h2>
 
-              <div class="trending__item" role="button" tabindex="0">
-                <span class="trending__number">1</span>
-                <div class="trending__content">
-                  <p class="trending__topic">#AIInProductDesign</p>
-                  <p class="trending__posts">4,200+ posts this week</p>
+            <!-- Experience list -->
+            <ul class="li-exp-list">
+
+              <!-- Job 1 -->
+              <li class="li-exp-item">
+                <div class="li-exp-item__logo" aria-hidden="true">
+                  <i class="bi bi-rocket-takeoff-fill"></i>
                 </div>
-              </div>
-
-              <div class="trending__item" role="button" tabindex="0">
-                <span class="trending__number">2</span>
-                <div class="trending__content">
-                  <p class="trending__topic">#FutureOfWork</p>
-                  <p class="trending__posts">3,850+ posts this week</p>
+                <div class="li-exp-item__body">
+                  <h3 class="li-exp-item__title">Senior Product Designer</h3>
+                  <p class="li-exp-item__company">
+                    Horizon Labs · Full-time
+                  </p>
+                  <p class="li-exp-item__period">
+                    <i class="bi bi-calendar3"></i>
+                    Jan 2022 – Present · 2 yrs 3 mos
+                  </p>
+                  <p class="li-exp-item__location">
+                    <i class="bi bi-geo-alt"></i> San Francisco, CA · Hybrid
+                  </p>
+                  <p class="li-exp-item__desc">
+                    Leading product design for the core platform used by 400 K+ monthly
+                    active users. Established a component-based design system adopted by
+                    5 product squads. Partnered closely with engineering and product to
+                    reduce time-to-ship for new features by 35 %.
+                  </p>
                 </div>
-              </div>
+              </li>
 
-              <div class="trending__item" role="button" tabindex="0">
-                <span class="trending__number">3</span>
-                <div class="trending__content">
-                  <p class="trending__topic">#CareerGrowth</p>
-                  <p class="trending__posts">2,940+ posts this week</p>
-                </div>
-              </div>
+              <!-- Separator -->
+              <li class="li-exp-divider" aria-hidden="true"></li>
 
-              <div class="trending__item" role="button" tabindex="0">
-                <span class="trending__number">4</span>
-                <div class="trending__content">
-                  <p class="trending__topic">#LeadershipTips</p>
-                  <p class="trending__posts">2,110+ posts this week</p>
+              <!-- Job 2 -->
+              <li class="li-exp-item">
+                <div class="li-exp-item__logo" aria-hidden="true">
+                  <i class="bi bi-layers-fill"></i>
                 </div>
-              </div>
+                <div class="li-exp-item__body">
+                  <h3 class="li-exp-item__title">UX / Product Designer</h3>
+                  <p class="li-exp-item__company">
+                    NovaTech Solutions · Full-time
+                  </p>
+                  <p class="li-exp-item__period">
+                    <i class="bi bi-calendar3"></i>
+                    Mar 2019 – Dec 2021 · 2 yrs 10 mos
+                  </p>
+                  <p class="li-exp-item__location">
+                    <i class="bi bi-geo-alt"></i> New York, NY · On-site
+                  </p>
+                  <p class="li-exp-item__desc">
+                    Redesigned the onboarding flow, improving 30-day user retention by 22 %.
+                    Ran usability studies with 60+ participants and translated insights into
+                    actionable design improvements across web and mobile.
+                  </p>
+                </div>
+              </li>
 
-              <div class="trending__item" role="button" tabindex="0">
-                <span class="trending__number">5</span>
-                <div class="trending__content">
-                  <p class="trending__topic">#OpenToWork</p>
-                  <p class="trending__posts">1,780+ posts this week</p>
+              <!-- Separator -->
+              <li class="li-exp-divider" aria-hidden="true"></li>
+
+              <!-- Job 3 -->
+              <li class="li-exp-item">
+                <div class="li-exp-item__logo" aria-hidden="true">
+                  <i class="bi bi-brush-fill"></i>
                 </div>
-              </div>
-            </div>
+                <div class="li-exp-item__body">
+                  <h3 class="li-exp-item__title">UI Designer</h3>
+                  <p class="li-exp-item__company">
+                    Pixel & Craft Agency · Full-time
+                  </p>
+                  <p class="li-exp-item__period">
+                    <i class="bi bi-calendar3"></i>
+                    Jun 2015 – Feb 2019 · 3 yrs 9 mos
+                  </p>
+                  <p class="li-exp-item__location">
+                    <i class="bi bi-geo-alt"></i> Austin, TX · On-site
+                  </p>
+                  <p class="li-exp-item__desc">
+                    Designed visual identities, marketing sites, and dashboard UIs for
+                    30+ clients across fintech, healthcare, and e-commerce verticals.
+                  </p>
+                </div>
+              </li>
+
+            </ul>
           </section>
-          <!-- / Trending Topics -->
+          <!-- /EXPERIENCE SECTION -->
 
 
-          <!-- Footer links -->
-          <footer class="card sidebar-footer" aria-label="Footer links">
-            <a href="#" class="sidebar-footer__link">About</a>
-            <a href="#" class="sidebar-footer__link">Accessibility</a>
-            <a href="#" class="sidebar-footer__link">Help Center</a>
-            <a href="#" class="sidebar-footer__link">Privacy &amp; Terms</a>
-            <a href="#" class="sidebar-footer__link">Ad Choices</a>
-            <a href="#" class="sidebar-footer__link">Advertising</a>
-            <a href="#" class="sidebar-footer__link">Business Services</a>
-            <a href="#" class="sidebar-footer__link">More</a>
-            <p class="sidebar-footer__copy">LinkedIn © 2025</p>
-          </footer>
-          <!-- / Footer -->
+          <!-- --------------------------------------------------------
+               4. EDUCATION SECTION
+          -------------------------------------------------------- -->
+          <section class="li-card li-section" aria-labelledby="education-heading">
+            <h2 class="li-section__title" id="education-heading">Education</h2>
 
+            <ul class="li-edu-list">
+
+              <!-- School 1 -->
+              <li class="li-edu-item">
+                <div class="li-edu-item__logo" aria-hidden="true">
+                  <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <div class="li-edu-item__body">
+                  <h3 class="li-edu-item__school">Carnegie Mellon University</h3>
+                  <p class="li-edu-item__degree">
+                    Master of Human-Computer Interaction (MHCI)
+                  </p>
+                  <p class="li-edu-item__years">
+                    <i class="bi bi-calendar3"></i> 2013 – 2015
+                  </p>
+                  <p class="li-edu-item__desc">
+                    Thesis: "Adaptive Interfaces for Low-Literacy Users in Emerging Markets."
+                    Graduate Teaching Assistant for Interaction Design Studio.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Separator -->
+              <li class="li-exp-divider" aria-hidden="true"></li>
+
+              <!-- School 2 -->
+              <li class="li-edu-item">
+                <div class="li-edu-item__logo" aria-hidden="true">
+                  <i class="bi bi-building-fill"></i>
+                </div>
+                <div class="li-edu-item__body">
+                  <h3 class="li-edu-item__school">University of Michigan</h3>
+                  <p class="li-edu-item__degree">
+                    B.S. in Computer Science, Minor in Visual Art
+                  </p>
+                  <p class="li-edu-item__years">
+                    <i class="bi bi-calendar3"></i> 2009 – 2013
+                  </p>
+                  <p class="li-edu-item__desc">
+                    Dean's List (all semesters). President of the UX Design Club.
+                  </p>
+                </div>
+              </li>
+
+            </ul>
+          </section>
+          <!-- /EDUCATION SECTION -->
+
+
+          <!-- --------------------------------------------------------
+               5. SKILLS SECTION
+          -------------------------------------------------------- -->
+          <section class="li-card li-section" aria-labelledby="skills-heading">
+            <h2 class="li-section__title" id="skills-heading">Skills</h2>
+
+            <div class="li-skills-grid">
+
+              <!-- Skill with endorsements -->
+              <div class="li-skill-item">
+                <div class="li-skill-item__info">
+                  <span class="li-skill-item__name">Product Design</span>
+                  <span class="li-skill-item__endorsements">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> 148 endorsements
+                  </span>
+                </div>
+                <div class="li-skill-item__bar">
+                  <div class="li-skill-item__fill" style="--fill: 95%"></div>
+                </div>
+              </div>
+
+              <div class="li-skill-item">
+                <div class="li-skill-item__info">
+                  <span class="li-skill-item__name">Design Systems</span>
+                  <span class="li-skill-item__endorsements">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> 112 endorsements
+                  </span>
+                </div>
+                <div class="li-skill-item__bar">
+                  <div class="li-skill-item__fill" style="--fill: 90%"></div>
+                </div>
+              </div>
+
+              <div class="li-skill-item">
+                <div class="li-skill-item__info">
+                  <span class="li-skill-item__name">UX Research</span>
+                  <span class="li-skill-item__endorsements">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> 97 endorsements
+                  </span>
+                </div>
+                <div class="li-skill-item__bar">
+                  <div class="li-skill-item__fill" style="--fill: 85%"></div>
+                </div>
+              </div>
+
+              <div class="li-skill-item">
+                <div class="li-skill-item__info">
+                  <span class="li-skill-item__name">Figma</span>
+                  <span class="li-skill-item__endorsements">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> 134 endorsements
+                  </span>
+                </div>
+                <div class="li-skill-item__bar">
+                  <div class="li-skill-item__fill" style="--fill: 98%"></div>
+                </div>
+              </div>
+
+              <div class="li-skill-item">
+                <div class="li-skill-item__info">
+                  <span class="li-skill-item__name">Prototyping</span>
+                  <span class="li-skill-item__endorsements">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> 88 endorsements
+                  </span>
+                </div>
+                <div class="li-skill-item__bar">
+                  <div class="li-skill-item__fill" style="--fill: 88%"></div>
+                </div>
+              </div>
+
+              <div class="li-skill-item">
+                <div class="li-skill-item__info">
+                  <span class="li-skill-item__name">Accessibility (WCAG)</span>
+                  <span class="li-skill-item__endorsements">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> 74 endorsements
+                  </span>
+                </div>
+                <div class="li-skill-item__bar">
+                  <div class="li-skill-item__fill" style="--fill: 80%"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tag cloud -->
+            <div class="li-skills-tags">
+              <span class="li-tag">HTML / CSS</span>
+              <span class="li-tag">JavaScript</span>
+              <span class="li-tag">React</span>
+              <span class="li-tag">Storybook</span>
+              <span class="li-tag">User Testing</span>
+              <span class="li-tag">Information Architecture</span>
+              <span class="li-tag">Wireframing</span>
+              <span class="li-tag">Motion Design</span>
+              <span class="li-tag">Design Thinking</span>
+              <span class="li-tag">Agile / Scrum</span>
+              <span class="li-tag">A/B Testing</span>
+              <span class="li-tag">Notion</span>
+              <span class="li-tag">Jira</span>
+              <span class="li-tag">Principle</span>
+              <span class="li-tag">Adobe XD</span>
+              <span class="li-tag">Miro</span>
+            </div>
+
+          </section>
+          <!-- /SKILLS SECTION -->
 
         </div>
+        <!-- /MAIN COLUMN -->
+
+
+        <!-- ============================================================
+             SIDEBAR COLUMN (right)
+        ============================================================ -->
+        <aside class="col-12 col-lg-4" aria-label="Sidebar">
+
+          <!-- --------------------------------------------------------
+               PEOPLE YOU MAY KNOW
+          -------------------------------------------------------- -->
+          <section class="li-card li-section li-sidebar-section" aria-labelledby="pymk-heading">
+            <h2 class="li-section__title li-section__title--sm" id="pymk-heading">
+              People you may know
+            </h2>
+
+            <ul class="li-pymk-list">
+
+              <li class="li-pymk-item">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="James Liu"
+                  class="li-pymk-item__avatar"
+                />
+                <div class="li-pymk-item__info">
+                  <span class="li-pymk-item__name">James Liu</span>
+                  <span class="li-pymk-item__role">Head of Design @ Stripe</span>
+                  <span class="li-pymk-item__mutual">
+                    <i class="bi bi-people"></i> 12 mutual connections
+                  </span>
+                </div>
+                <button class="li-btn li-btn--connect-sm" aria-label="Connect with James Liu">
+                  <i class="bi bi-person-plus"></i> Connect
+                </button>
+              </li>
+
+              <li class="li-pymk-item">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Priya Sharma"
+                  class="li-pymk-item__avatar"
+                />
+                <div class="li-pymk-item__info">
+                  <span class="li-pymk-item__name">Priya Sharma</span>
+                  <span class="li-pymk-item__role">UX Lead @ Figma</span>
+                  <span class="li-pymk-item__mutual">
+                    <i class="bi bi-people"></i> 8 mutual connections
+                  </span>
+                </div>
+                <button class="li-btn li-btn--connect-sm" aria-label="Connect with Priya Sharma">
+                  <i class="bi bi-person-plus"></i> Connect
+                </button>
+              </li>
+
+              <li class="li-pymk-item">
+                <img
+                  src="https://randomuser.me/api/portraits/men/55.jpg"
+                  alt="Carlos Rivera"
+                  class="li-pymk-item__avatar"
+                />
+                <div class="li-pymk-item__info">
+                  <span class="li-pymk-item__name">Carlos Rivera</span>
+                  <span class="li-pymk-item__role">Product Manager @ Notion</span>
+                  <span class="li-pymk-item__mutual">
+                    <i class="bi bi-people"></i> 5 mutual connections
+                  </span>
+                </div>
+                <button class="li-btn li-btn--connect-sm" aria-label="Connect with Carlos Rivera">
+                  <i class="bi bi-person-plus"></i> Connect
+                </button>
+              </li>
+
+            </ul>
+
+            <a href="#" class="li-sidebar-section__more">
+              Show all recommendations <i class="bi bi-arrow-right"></i>
+            </a>
+          </section>
+          <!-- /PEOPLE YOU MAY KNOW -->
+
+
+          <!-- --------------------------------------------------------
+               PROFILE SUGGESTIONS
+          -------------------------------------------------------- -->
+          <section class="li-card li-section li-sidebar-section" aria-labelledby="suggestions-heading">
+            <h2 class="li-section__title li-section__title--sm" id="suggestions-heading">
+              Profile language
+            </h2>
+
+            <ul class="li-profile-tips">
+              <li class="li-profile-tip">
+                <div class="li-profile-tip__icon li-profile-tip__icon--green">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <span>Profile photo added</span>
+              </li>
+              <li class="li-profile-tip">
+                <div class="li-profile-tip__icon li-profile-tip__icon--green">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <span>Headline complete</span>
+              </li>
+              <li class="li-profile-tip">
+                <div class="li-profile-tip__icon li-profile-tip__icon--blue">
+                  <i class="bi bi-plus-circle"></i>
+                </div>
+                <span>Add a featured section</span>
+              </li>
+              <li class="li-profile-tip">
+                <div class="li-profile-tip__icon li-profile-tip__icon--blue">
+                  <i class="bi bi-plus-circle"></i>
+                </div>
+                <span>Request a recommendation</span>
+              </li>
+              <li class="li-profile-tip">
+                <div class="li-profile-tip__icon li-profile-tip__icon--blue">
+                  <i class="bi bi-plus-circle"></i>
+                </div>
+                <span>Add your volunteering experience</span>
+              </li>
+            </ul>
+
+            <!-- Profile strength meter -->
+            <div class="li-strength">
+              <div class="li-strength__label">
+                <span>Profile Strength</span>
+                <span class="li-strength__level">All-Star</span>
+              </div>
+              <div class="li-strength__bar">
+                <div class="li-strength__fill"></div>
+              </div>
+            </div>
+          </section>
+          <!-- /PROFILE SUGGESTIONS -->
+
+
+          <!-- --------------------------------------------------------
+               OPEN TO WORK BADGE
+          -------------------------------------------------------- -->
+          <section class="li-card li-oto-card" aria-label="Open to work">
+            <div class="li-oto-card__icon">
+              <i class="bi bi-briefcase-fill"></i>
+            </div>
+            <div class="li-oto-card__body">
+              <h3 class="li-oto-card__title">Open to work</h3>
+              <p class="li-oto-card__roles">
+                Product Designer, Senior UX Designer, Design Lead
+              </p>
+              <a href="#" class="li-oto-card__link">See details</a>
+            </div>
+          </section>
+          <!-- /OPEN TO WORK BADGE -->
+
+        </aside>
+        <!-- /SIDEBAR COLUMN -->
+
       </div>
-      <!-- / RIGHT SIDEBAR -->
-
-
+      <!-- /row -->
     </div>
-  </main>
-  <!-- / MAIN LAYOUT -->
+    <!-- /container -->
+  </div>
+  <!-- /PAGE WRAPPER -->
 
 
-  <!-- Bootstrap 5 JS Bundle (Popper + Bootstrap) -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="li-footer">
+    <div class="container">
+      <ul class="li-footer__links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Help Centre</a></li>
+        <li><a href="#">Privacy &amp; Terms</a></li>
+        <li><a href="#">Ad Choices</a></li>
+        <li><a href="#">Advertising</a></li>
+        <li><a href="#">Business Services</a></li>
+      </ul>
+      <p class="li-footer__copy">
+        <i class="bi bi-linkedin"></i> LinkedIn Corporation &copy; 2024
+      </p>
+    </div>
+  </footer>
+  <!-- /FOOTER -->
 
 </body>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/localStorage.js"></script>
+<script src="js/profile.js"></script>
 </html>
